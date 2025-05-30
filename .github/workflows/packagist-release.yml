@@ -1,10 +1,13 @@
-name: Packagist Release
+name: Release on Main
+
+permissions:
+  contents: write
+  packages: write
 
 on:
   push:
     branches:
       - main
-      - master
 
 jobs:
   release:
@@ -12,37 +15,51 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
 
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y.%m.%d.%H%M%S')" >> $GITHUB_OUTPUT
+      - name: composer install
+        run: composer install --no-interaction --no-progress --optimize-autoloader
 
-      - name: Bump version in composer.json
+      - name: Run tests
+        run: vendor/bin/phpunit --testdox
+
+      - name: Get current version
+        id: get_version
         run: |
-          VERSION=${{ steps.date.outputs.date }}
-          jq ".version=\"$VERSION\"" composer.json > composer.json.tmp && mv composer.json.tmp composer.json
+          VERSION=$(jq -r .version composer.json)
+          echo "Current version: $VERSION"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Bump version
+        id: bump_version
+        run: |
+          CURRENT_VERSION=$(jq -r .version composer.json)
+          IFS='.' read -r -a parts <<< "$CURRENT_VERSION"
+          PATCH=$((parts[2]+1))
+          NEXT_VERSION="${parts[0]}.${parts[1]}.$PATCH"
+          jq --arg v "$NEXT_VERSION" '.version = $v' composer.json > composer.json.tmp && mv composer.json.tmp composer.json
+          echo "Bumped version: $NEXT_VERSION"
+          echo "next_version=$NEXT_VERSION" >> $GITHUB_OUTPUT
 
       - name: Commit version bump
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add composer.json
-          git commit -m "chore: bump version to ${{ steps.date.outputs.date }}" || echo "No changes to commit"
+          git commit -m "Bump version to ${{ steps.bump_version.outputs.next_version }}" || echo "No changes to commit"
           git push
 
-      - name: Create GitHub Release
+      - name: Create or update release
+        id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.date.outputs.date }}
-          name: Release ${{ steps.date.outputs.date }}
-          body: "Automated release for commit ${{ github.sha }}."
+          tag_name: "v${{ steps.bump_version.outputs.next_version }}"
+          name: "v${{ steps.bump_version.outputs.next_version }}"
+          body: "Automated release for version v${{ steps.bump_version.outputs.next_version }}"
           draft: false
           prerelease: false
         env:
