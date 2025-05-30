@@ -1,21 +1,15 @@
 {
-    "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
-    "license": "MIT",
+    "name": "processton/setup",
+    "version": "1.0.0",
     "require": {
         "php": "^8.2",
-        "blade-ui-kit/blade-heroicons": "^2.6",
+        "andreiio/blade-remix-icon": "^3.6",
         "codeat3/blade-eos-icons": "^1.15",
         "dedoc/scramble": "^0.12.16",
         "garygreen/pretty-routes": "^1.0",
         "laravel/framework": "^12.0",
-        "laravel/reverb": "^1.0",
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "^4.6",
-        "mallardduck/blade-lucide-icons": "^1.23",
         "processton/access-controll": "dev-main",
         "processton/client": "dev-main",
         "processton/company": "dev-main",
@@ -27,9 +21,7 @@
         "processton/form": "dev-main",
         "processton/locale": "dev-main",
         "processton/org": "dev-main",
-        "processton/user-profile": "dev-main",
-        "secondnetwork/blade-tabler-icons": "^3.31",
-        "vormkracht10/filament-mails": "^2.3"
+        "processton/user-profile": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -42,142 +34,105 @@
         "pestphp/pest": "^3.7",
         "pestphp/pest-plugin-laravel": "^3.1"
     },
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
     "repositories": [
         {
             "type": "path",
-            "url": "/app",
+            "url": "./packages/client",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/org",
+            "url": "./packages/processton/org",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/locale",
+            "url": "./packages/processton/locale",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/access-controll",
+            "url": "./packages/processton/access-controll",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/user-profile",
+            "url": "./packages/processton/user-profile",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/company",
+            "url": "./packages/processton/company",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/contact",
+            "url": "./packages/processton/contact",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/customer",
+            "url": "./packages/processton/customer",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/items",
+            "url": "./packages/processton/items",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/lead",
+            "url": "./packages/processton/lead",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/campaign",
+            "url": "./packages/processton/campaign",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "../packages/processton/form",
+            "url": "./packages/processton/form",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         
         }
     ],
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php artisan filament:upgrade"
-        ],
-        "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi",
-            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan migrate --graceful --ansi"
-        ],
-        "dev": [
-            "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
-        ]
+    "autoload": {
+        "psr-4": {
+            "Processton\\Setup\\": "src/",
+            "Processton\\SetupDatabase\\Factories\\": "database/factories/",
+            "Processton\\SetupDatabase\\Seeders\\": "database/seeders/"
+        }
     },
     "extra": {
         "laravel": {
-            "dont-discover": [],
-            "providers": []
+            "providers": [
+                "Processton\\Setup\\SetupServiceProvider"
+            ]
         }
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "php-http/discovery": true
-        }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }
