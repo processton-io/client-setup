@@ -1,6 +1,6 @@
 {
   "name": "processton/setup",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "require": {
     "php": "^8.2",
     "laravel/framework": "^12.0",
