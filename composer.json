@@ -25,14 +25,8 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
-        "laravel/breeze": "^2.3",
-        "laravel/pail": "^1.2.2",
-        "laravel/pint": "^1.13",
-        "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.6",
-        "pestphp/pest": "^3.7",
-        "pestphp/pest-plugin-laravel": "^3.1"
+        "nunomaduro/collision": "^8.6"
     },
     "repositories": [
         {
@@ -126,6 +120,13 @@
             "Processton\\Setup\\": "src/",
             "Processton\\SetupDatabase\\Factories\\": "database/factories/",
             "Processton\\SetupDatabase\\Seeders\\": "database/seeders/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "third-party/required-plugin": true,
+            "processton/*": true,
+            "unnecessary/plugin": false
         }
     },
     "extra": {

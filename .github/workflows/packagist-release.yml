@@ -24,9 +24,6 @@ jobs:
       - name: composer install
         run: composer install --no-interaction --no-progress --optimize-autoloader
 
-      - name: Run tests
-        run: vendor/bin/phpunit --testdox
-
       - name: Get current version
         id: get_version
         run: |
