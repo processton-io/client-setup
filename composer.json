@@ -1,133 +1,132 @@
 {
-    "name": "processton/setup",
-    "version": "v1.0.0",
-    "require": {
-        "php": "^8.2",
-        "laravel/framework": "^12.0",
-        "processton/access-controll": "dev-main",
-        "processton/client": "dev-main",
-        "processton/company": "dev-main",
-        "processton/contact": "dev-main",
-        "processton/customer": "dev-main",
-        "processton/items": "dev-main",
-        "processton/lead": "dev-main",
-        "processton/campaign": "dev-main",
-        "processton/form": "dev-main",
-        "processton/locale": "dev-main",
-        "processton/org": "dev-main",
-        "processton/user-profile": "dev-main"
+  "name": "processton/setup",
+  "version": "v1.0.1",
+  "require": {
+    "php": "^8.2",
+    "laravel/framework": "^12.0",
+    "processton/access-controll": "dev-main",
+    "processton/client": "dev-main",
+    "processton/company": "dev-main",
+    "processton/contact": "dev-main",
+    "processton/customer": "dev-main",
+    "processton/items": "dev-main",
+    "processton/lead": "dev-main",
+    "processton/campaign": "dev-main",
+    "processton/form": "dev-main",
+    "processton/locale": "dev-main",
+    "processton/org": "dev-main",
+    "processton/user-profile": "dev-main"
+  },
+  "require-dev": {
+    "fakerphp/faker": "^1.23",
+    "mockery/mockery": "^1.6",
+    "nunomaduro/collision": "^8.6"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./packages/client",
+      "options": {
+        "symlink": false
+      }
     },
-    "require-dev": {
-        "fakerphp/faker": "^1.23",
-        "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.6"
+    {
+      "type": "path",
+      "url": "./packages/processton/org",
+      "options": {
+        "symlink": false
+      }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./packages/client",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/org",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/locale",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/access-controll",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/user-profile",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/company",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/contact",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/customer",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/items",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/lead",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/campaign",
-            "options": {
-                "symlink": false
-            }
-        },
-        {
-            "type": "path",
-            "url": "./packages/processton/form",
-            "options": {
-                "symlink": false
-            }
-        
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Processton\\Setup\\": "src/",
-            "Processton\\SetupDatabase\\Factories\\": "database/factories/",
-            "Processton\\SetupDatabase\\Seeders\\": "database/seeders/"
-        }
+    {
+      "type": "path",
+      "url": "./packages/processton/locale",
+      "options": {
+        "symlink": false
+      }
     },
-    "config": {
-        "allow-plugins": {
-            "third-party/required-plugin": true,
-            "processton/*": true,
-            "unnecessary/plugin": false
-        }
+    {
+      "type": "path",
+      "url": "./packages/processton/access-controll",
+      "options": {
+        "symlink": false
+      }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Processton\\Setup\\SetupServiceProvider"
-            ]
-        }
+    {
+      "type": "path",
+      "url": "./packages/processton/user-profile",
+      "options": {
+        "symlink": false
+      }
+    },
+    {
+      "type": "path",
+      "url": "./packages/processton/company",
+      "options": {
+        "symlink": false
+      }
+    },
+    {
+      "type": "path",
+      "url": "./packages/processton/contact",
+      "options": {
+        "symlink": false
+      }
+    },
+    {
+      "type": "path",
+      "url": "./packages/processton/customer",
+      "options": {
+        "symlink": false
+      }
+    },
+    {
+      "type": "path",
+      "url": "./packages/processton/items",
+      "options": {
+        "symlink": false
+      }
+    },
+    {
+      "type": "path",
+      "url": "./packages/processton/lead",
+      "options": {
+        "symlink": false
+      }
+    },
+    {
+      "type": "path",
+      "url": "./packages/processton/campaign",
+      "options": {
+        "symlink": false
+      }
+    },
+    {
+      "type": "path",
+      "url": "./packages/processton/form",
+      "options": {
+        "symlink": false
+      }
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Processton\\Setup\\": "src/",
+      "Processton\\SetupDatabase\\Factories\\": "database/factories/",
+      "Processton\\SetupDatabase\\Seeders\\": "database/seeders/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "third-party/required-plugin": true,
+      "processton/*": true,
+      "unnecessary/plugin": false
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Processton\\Setup\\SetupServiceProvider"
+      ]
+    }
+  }
 }
