@@ -1,0 +1,22 @@
+{
+    "name": "processton/user-profile",
+    "require": {
+        "spatie/laravel-stats": "^2.3",
+        "owenvoke/blade-fontawesome": "^2.9",
+        "filament/filament": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Processton\\UserProfile\\": "src/",
+            "Processton\\UserProfile\\Factories\\": "database/factories/",
+            "Processton\\UserProfile\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\UserProfile\\UserProfileServiceProvider"
+            ]
+        }
+    }
+}

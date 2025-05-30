@@ -1,0 +1,25 @@
+{
+    "name": "processton/contact",
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^12.0",
+        "andreiio/blade-remix-icon": "^3.6"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "Processton\\Contact\\": "src/",
+            "Processton\\ContactDatabase\\Factories\\": "database/factories/",
+            "Processton\\ContactDatabase\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\Contact\\ContactServiceProvider"
+            ]
+        }
+    }
+}

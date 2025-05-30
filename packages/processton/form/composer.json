@@ -1,0 +1,23 @@
+{
+    "name": "processton/form",
+    "description": "Filament-based form builder package with drag-and-drop editor.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Processton\\Form\\": "src/",
+            "Processton\\Form\\Seeders\\": "database/seeders/"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "filament/filament": "^3.0",
+        "blade-ui-kit/blade-heroicons":"*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\Form\\FormServiceProvider"
+            ]
+        }
+    }
+}

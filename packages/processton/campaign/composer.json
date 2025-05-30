@@ -1,0 +1,28 @@
+{
+    "name": "processton/campaign",
+    "description": "Campaign module for Processton",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Processton",
+            "email": "ahmadkokab@processton.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Processton\\Campaigns\\": "src/",
+            "Processton\\Campaigns\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\Campaigns\\CampaignServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "filament/filament": "^3.0"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "name": "processton/access-controll",
+    "require": {
+        "spatie/laravel-stats": "^2.3",
+        "owenvoke/blade-fontawesome": "^2.9",
+        "codeat3/blade-iconpark": "^1.7",
+        "filament/filament": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Processton\\AccessControll\\": "src/",
+            "Processton\\AccessControll\\Factories\\": "database/factories/",
+            "Processton\\AccessControll\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\AccessControll\\AccessControllServiceProvider"
+            ]
+        }
+    }
+}

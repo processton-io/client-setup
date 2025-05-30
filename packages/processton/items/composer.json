@@ -1,0 +1,26 @@
+{
+    "name": "processton/items",
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^12.0",
+        "eduard9969/blade-polaris-icons": "^2.8",
+        "codeat3/blade-carbon-icons": "^2.34"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "Processton\\Items\\": "src/",
+            "Processton\\ItemsDatabase\\Factories\\": "database/factories/",
+            "Processton\\ItemsDatabase\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\Items\\ItemsServiceProvider"
+            ]
+        }
+    }
+}
