@@ -4,17 +4,20 @@
   "require": {
     "php": "^8.2",
     "laravel/framework": "^12.0",
-    "processton/client": "dev-main",
-    "processton/company": "dev-main",
-    "processton/contact": "dev-main",
-    "processton/customer": "dev-main",
-    "processton/items": "dev-main",
-    "processton/lead": "dev-main",
-    "processton/campaign": "dev-main",
-    "processton/form": "dev-main",
-    "processton/locale": "dev-main",
-    "processton/org": "dev-main",
-    "processton/user-profile": "dev-main"
+    "spatie/laravel-stats": "^2.3",
+    "owenvoke/blade-fontawesome": "^2.9",
+    "codeat3/blade-iconpark": "^1.7",
+    "filament/filament": "^3.3",
+    "codeat3/blade-carbon-icons": "^2.34",
+    "andreiio/blade-remix-icon": "^3.6",
+    "blade-ui-kit/blade-heroicons":"*",
+    "eduard9969/blade-polaris-icons": "^2.8",
+    "mokhosh/filament-kanban": "^2.10",
+    "codeat3/blade-solar-icons": "^1.2",
+    "postare/blade-mdi": "^1.0",
+    "codeat3/blade-majestic-icons": "^2.2",
+    "pelmered/filament-money-field": "^1.5"
+
   },
   "require-dev": {
     "fakerphp/faker": "^1.23",
@@ -22,13 +25,6 @@
     "nunomaduro/collision": "^8.6"
   },
   "repositories": [
-    {
-      "type": "path",
-      "url": "./packages/client",
-      "options": {
-        "symlink": false
-      }
-    },
     {
       "type": "path",
       "url": "./packages/processton/org",
@@ -105,23 +101,58 @@
       "Processton\\Setup\\": "src/",
       "Processton\\SetupDatabase\\Factories\\": "database/factories/",
       "Processton\\SetupDatabase\\Seeders\\": "database/seeders/",
+      "Processton\\Client\\": "./packages/processton/client/src/",
+      "Processton\\ClientDatabase\\Factories\\": "./packages/processton/client/database/factories/",
+      "Processton\\ClientDatabase\\Seeders\\": "./packages/processton/client/database/seeders/",
       "Processton\\AccessControll\\": "./packages/processton/access-controll/src/",
       "Processton\\AccessControll\\Factories\\": "./packages/processton/access-controll/database/factories/",
-      "Processton\\AccessControll\\Seeders\\": "./packages/processton/access-controll/database/seeders/"
-    }
-  },
-  "config": {
-    "allow-plugins": {
-      "third-party/required-plugin": true,
-      "processton/*": true,
-      "unnecessary/plugin": false
+      "Processton\\AccessControll\\Seeders\\": "./packages/processton/access-controll/database/seeders/",
+      "Processton\\Campaigns\\": "./packages/processton/campaign/src/",
+      "Processton\\Campaigns\\Seeders\\": "./packages/processton/campaign/database/seeders/",
+      "Processton\\Company\\": "./packages/processton/company/src/",
+      "Processton\\CompanyDatabase\\Factories\\": "./packages/processton/company/database/factories/",
+      "Processton\\CompanyDatabase\\Seeders\\": "./packages/processton/company/database/seeders/",
+      "Processton\\Contact\\": "./packages/processton/contact/src/",
+      "Processton\\ContactDatabase\\Factories\\": "./packages/processton/contact/database/factories/",
+      "Processton\\ContactDatabase\\Seeders\\": "./packages/processton/contact/database/seeders/",
+      "Processton\\Customer\\": "./packages/processton/customer/src/",
+      "Processton\\CustomerDatabase\\Factories\\": "./packages/processton/customer/database/factories/",
+      "Processton\\CustomerDatabase\\Seeders\\": "./packages/processton/customer/database/seeders/",
+      "Processton\\Form\\": "./packages/processton/form/src/",
+      "Processton\\Form\\Seeders\\": "./packages/processton/form/database/seeders/",
+      "Processton\\Items\\": "./packages/processton/items/src/",
+      "Processton\\ItemsDatabase\\Factories\\": "./packages/processton/items/database/factories/",
+      "Processton\\ItemsDatabase\\Seeders\\": "./packages/processton/items/database/seeders/",
+      "Processton\\Lead\\": "./packages/processton/lead/src/",
+      "Processton\\LeadDatabase\\Factories\\": "./packages/processton/lead/database/factories/",
+      "Processton\\LeadDatabase\\Seeders\\": "./packages/processton/lead/database/seeders/",
+      "Processton\\Locale\\": "./packages/processton/locale/src/",
+      "Processton\\LocaleDatabase\\Factories\\": "./packages/processton/locale/database/factories/",
+      "Processton\\LocaleDatabase\\Seeders\\": "./packages/processton/locale/database/seeders/",
+      "Processton\\Org\\": "./packages/processton/org/src/",
+      "Processton\\OrgDatabase\\Factories\\": "./packages/processton/org/database/factories/",
+      "Processton\\OrgDatabase\\Seeders\\": "./packages/processton/org/database/seeders/",
+      "Processton\\UserProfile\\": "./packages/processton/user-profile/src/",
+      "Processton\\UserProfile\\Factories\\": "./packages/processton/user-profile/database/factories/",
+      "Processton\\UserProfile\\Seeders\\": "./packages/processton/user-profile/database/seeders/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
         "Processton\\Setup\\SetupServiceProvider",
-        "Processton\\AccessControll\\AccessControllServiceProvider"
+        "Processton\\Client\\ClientServiceProvider",
+        "Processton\\AccessControll\\AccessControllServiceProvider",
+        "Processton\\Campaigns\\CampaignServiceProvider",
+        "Processton\\Company\\CompanyServiceProvider",
+        "Processton\\Contact\\ContactServiceProvider",
+        "Processton\\Customer\\CustomerServiceProvider",
+        "Processton\\Form\\FormServiceProvider",
+        "Processton\\Items\\ItemsServiceProvider",
+        "Processton\\Lead\\LeadServiceProvider",
+        "Processton\\Locale\\LocaleServiceProvider",
+        "Processton\\Org\\OrgServiceProvider",
+        "Processton\\UserProfile\\UserProfileServiceProvider"
       ]
     }
   }

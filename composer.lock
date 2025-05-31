@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "59844b0e84d2e9621801a24b74abcdd6",
+    "content-hash": "45277ef6814ce3f09e12bc646688bc59",
     "packages": [
         {
             "name": "andreiio/blade-remix-icon",
@@ -482,17 +482,17 @@
             "time": "2025-05-27T07:02:44+00:00"
         },
         {
-            "name": "codeat3/blade-eos-icons",
-            "version": "1.15.0",
+            "name": "codeat3/blade-iconpark",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/codeat3/blade-eos-icons.git",
-                "reference": "e00a7f6b2a2d72f679c4ec6d9bc80293746da154"
+                "url": "https://github.com/codeat3/blade-iconpark.git",
+                "reference": "fb0265a9d36cd08e7b50cbd82df3c3b0b4eb3266"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeat3/blade-eos-icons/zipball/e00a7f6b2a2d72f679c4ec6d9bc80293746da154",
-                "reference": "e00a7f6b2a2d72f679c4ec6d9bc80293746da154",
+                "url": "https://api.github.com/repos/codeat3/blade-iconpark/zipball/fb0265a9d36cd08e7b50cbd82df3c3b0b4eb3266",
+                "reference": "fb0265a9d36cd08e7b50cbd82df3c3b0b4eb3266",
                 "shasum": ""
             },
             "require": {
@@ -510,13 +510,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Codeat3\\BladeEosIcons\\BladeEosIconsServiceProvider"
+                        "Codeat3\\BladeIconpark\\BladeIconparkServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Codeat3\\BladeEosIcons\\": "src"
+                    "Codeat3\\BladeIconpark\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -533,16 +533,16 @@
                     "homepage": "https://driesvints.com"
                 }
             ],
-            "description": "A package to easily make use of \"EOS Icons\" in your Laravel Blade views.",
-            "homepage": "https://github.com/codeat3/blade-eos-icons",
+            "description": "A package to easily make use of \"Icon Park Icons\" in your Laravel Blade views. ",
+            "homepage": "https://github.com/codeat3/blade-iconpark",
             "keywords": [
                 "blade",
-                "eos-icons",
+                "iconpark",
                 "laravel"
             ],
             "support": {
-                "issues": "https://github.com/codeat3/blade-eos-icons/issues",
-                "source": "https://github.com/codeat3/blade-eos-icons/tree/1.15.0"
+                "issues": "https://github.com/codeat3/blade-iconpark/issues",
+                "source": "https://github.com/codeat3/blade-iconpark/tree/1.7.0"
             },
             "funding": [
                 {
@@ -550,7 +550,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-25T08:32:48+00:00"
+            "time": "2025-02-25T08:26:18+00:00"
         },
         {
             "name": "codeat3/blade-majestic-icons",
@@ -801,86 +801,6 @@
                 }
             ],
             "time": "2025-02-21T08:52:11+00:00"
-        },
-        {
-            "name": "dedoc/scramble",
-            "version": "v0.12.20",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dedoc/scramble.git",
-                "reference": "283bc6a8790ffaa5ea14d2cbdba83a42b414f7f5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dedoc/scramble/zipball/283bc6a8790ffaa5ea14d2cbdba83a42b414f7f5",
-                "reference": "283bc6a8790ffaa5ea14d2cbdba83a42b414f7f5",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^10.0|^11.0|^12.0",
-                "myclabs/deep-copy": "^1.12",
-                "nikic/php-parser": "^5.0",
-                "php": "^8.1",
-                "phpstan/phpdoc-parser": "^1.0|^2.0",
-                "spatie/laravel-package-tools": "^1.9.2"
-            },
-            "require-dev": {
-                "larastan/larastan": "^3.3",
-                "laravel/pint": "^v1.1.0",
-                "nunomaduro/collision": "^7.0|^8.0",
-                "orchestra/testbench": "^8.0|^9.0|^10.0",
-                "pestphp/pest": "^2.34|^3.7",
-                "pestphp/pest-plugin-laravel": "^2.3|^3.1",
-                "phpstan/extension-installer": "^1.4",
-                "phpstan/phpstan-deprecation-rules": "^2.0",
-                "phpstan/phpstan-phpunit": "^2.0",
-                "phpunit/phpunit": "^10.5|^11.5.3",
-                "spatie/laravel-permission": "^6.10",
-                "spatie/pest-plugin-snapshots": "^2.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Dedoc\\Scramble\\ScrambleServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Dedoc\\Scramble\\": "src",
-                    "Dedoc\\Scramble\\Database\\Factories\\": "database/factories"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Lytvynenko",
-                    "email": "litvinenko95@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Automatic generation of API documentation for Laravel applications.",
-            "homepage": "https://github.com/dedoc/scramble",
-            "keywords": [
-                "documentation",
-                "laravel",
-                "openapi"
-            ],
-            "support": {
-                "issues": "https://github.com/dedoc/scramble/issues",
-                "source": "https://github.com/dedoc/scramble/tree/v0.12.20"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/romalytvynenko",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-05-28T13:13:29+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -1977,53 +1897,6 @@
             "time": "2023-10-12T05:21:21+00:00"
         },
         {
-            "name": "garygreen/pretty-routes",
-            "version": "1.0.14",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/garygreen/pretty-routes.git",
-                "reference": "67d8c6cf31f62c057d9b804964f0c69944028287"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/garygreen/pretty-routes/zipball/67d8c6cf31f62c057d9b804964f0c69944028287",
-                "reference": "67d8c6cf31f62c057d9b804964f0c69944028287",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "5.*|6.*|7.*|8.*|^9.0|^10.0|^11.0|^12.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "PrettyRoutes\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PrettyRoutes\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Gary Green",
-                    "email": "holegary@gmail.com"
-                }
-            ],
-            "description": "Pretty routes for Laravel 5+",
-            "support": {
-                "issues": "https://github.com/garygreen/pretty-routes/issues",
-                "source": "https://github.com/garygreen/pretty-routes/tree/1.0.14"
-            },
-            "time": "2025-02-28T00:21:13+00:00"
-        },
-        {
             "name": "graham-campbell/result-type",
             "version": "v1.1.3",
             "source": {
@@ -2775,63 +2648,6 @@
             "time": "2025-05-27T15:49:44+00:00"
         },
         {
-            "name": "laravel/helpers",
-            "version": "v1.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/helpers.git",
-                "reference": "672d79d5b5f65dc821e57783fa11f22c4d762d70"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/helpers/zipball/672d79d5b5f65dc821e57783fa11f22c4d762d70",
-                "reference": "672d79d5b5f65dc821e57783fa11f22c4d762d70",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-                "php": "^7.2.0|^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^7.0|^8.0|^9.0|^10.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                },
-                {
-                    "name": "Dries Vints",
-                    "email": "dries@laravel.com"
-                }
-            ],
-            "description": "Provides backwards compatibility for helpers in the latest Laravel release.",
-            "keywords": [
-                "helpers",
-                "laravel"
-            ],
-            "support": {
-                "source": "https://github.com/laravel/helpers/tree/v1.7.2"
-            },
-            "time": "2025-01-24T15:41:25+00:00"
-        },
-        {
             "name": "laravel/prompts",
             "version": "v0.3.5",
             "source": {
@@ -2950,135 +2766,6 @@
                 "source": "https://github.com/laravel/serializable-closure"
             },
             "time": "2025-03-19T13:51:03+00:00"
-        },
-        {
-            "name": "laravel/tinker",
-            "version": "v2.10.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/tinker.git",
-                "reference": "22177cc71807d38f2810c6204d8f7183d88a57d3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/22177cc71807d38f2810c6204d8f7183d88a57d3",
-                "reference": "22177cc71807d38f2810c6204d8f7183d88a57d3",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
-                "php": "^7.2.5|^8.0",
-                "psy/psysh": "^0.11.1|^0.12.0",
-                "symfony/var-dumper": "^4.3.4|^5.0|^6.0|^7.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~1.3.3|^1.4.2",
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^8.5.8|^9.3.3|^10.0"
-            },
-            "suggest": {
-                "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0)."
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Tinker\\TinkerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Tinker\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Powerful REPL for the Laravel framework.",
-            "keywords": [
-                "REPL",
-                "Tinker",
-                "laravel",
-                "psysh"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel/tinker/issues",
-                "source": "https://github.com/laravel/tinker/tree/v2.10.1"
-            },
-            "time": "2025-01-27T14:24:01+00:00"
-        },
-        {
-            "name": "laravel/ui",
-            "version": "v4.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/ui.git",
-                "reference": "7d6ffa38d79f19c9b3e70a751a9af845e8f41d88"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/7d6ffa38d79f19c9b3e70a751a9af845e8f41d88",
-                "reference": "7d6ffa38d79f19c9b3e70a751a9af845e8f41d88",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^9.21|^10.0|^11.0|^12.0",
-                "illuminate/filesystem": "^9.21|^10.0|^11.0|^12.0",
-                "illuminate/support": "^9.21|^10.0|^11.0|^12.0",
-                "illuminate/validation": "^9.21|^10.0|^11.0|^12.0",
-                "php": "^8.0",
-                "symfony/console": "^6.0|^7.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^7.35|^8.15|^9.0|^10.0",
-                "phpunit/phpunit": "^9.3|^10.4|^11.5"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Ui\\UiServiceProvider"
-                    ]
-                },
-                "branch-alias": {
-                    "dev-master": "4.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Ui\\": "src/",
-                    "Illuminate\\Foundation\\Auth\\": "auth-backend/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Laravel UI utilities and presets.",
-            "keywords": [
-                "laravel",
-                "ui"
-            ],
-            "support": {
-                "source": "https://github.com/laravel/ui/tree/v4.6.1"
-            },
-            "time": "2025-01-28T15:15:29+00:00"
         },
         {
             "name": "league/commonmark",
@@ -4136,66 +3823,6 @@
             "time": "2025-03-24T10:02:05+00:00"
         },
         {
-            "name": "myclabs/deep-copy",
-            "version": "1.13.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "1720ddd719e16cf0db4eb1c6eca108031636d46c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/1720ddd719e16cf0db4eb1c6eca108031636d46c",
-                "reference": "1720ddd719e16cf0db4eb1c6eca108031636d46c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1 || ^8.0"
-            },
-            "conflict": {
-                "doctrine/collections": "<1.6.8",
-                "doctrine/common": "<2.13.3 || >=3 <3.2.2"
-            },
-            "require-dev": {
-                "doctrine/collections": "^1.6.8",
-                "doctrine/common": "^2.13.3 || ^3.2.2",
-                "phpspec/prophecy": "^1.10",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.23 || ^9.5.13"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/DeepCopy/deep_copy.php"
-                ],
-                "psr-4": {
-                    "DeepCopy\\": "src/DeepCopy/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Create deep copies (clones) of your objects",
-            "keywords": [
-                "clone",
-                "copy",
-                "duplicate",
-                "object",
-                "object graph"
-            ],
-            "support": {
-                "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.1"
-            },
-            "funding": [
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/myclabs/deep-copy",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-04-29T12:36:36+00:00"
-        },
-        {
             "name": "nesbot/carbon",
             "version": "3.9.1",
             "source": {
@@ -4448,64 +4075,6 @@
                 "source": "https://github.com/nette/utils/tree/v4.0.6"
             },
             "time": "2025-03-30T21:06:30+00:00"
-        },
-        {
-            "name": "nikic/php-parser",
-            "version": "v5.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/447a020a1f875a434d62f2a401f53b82a396e494",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
-                "shasum": ""
-            },
-            "require": {
-                "ext-ctype": "*",
-                "ext-json": "*",
-                "ext-tokenizer": "*",
-                "php": ">=7.4"
-            },
-            "require-dev": {
-                "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^9.0"
-            },
-            "bin": [
-                "bin/php-parse"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PhpParser\\": "lib/PhpParser"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Nikita Popov"
-                }
-            ],
-            "description": "A PHP parser written in PHP",
-            "keywords": [
-                "parser",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
-            },
-            "time": "2024-12-30T11:07:19+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -4893,53 +4462,6 @@
             "time": "2024-07-20T21:41:07+00:00"
         },
         {
-            "name": "phpstan/phpdoc-parser",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
-                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0"
-            },
-            "require-dev": {
-                "doctrine/annotations": "^2.0",
-                "nikic/php-parser": "^5.3.0",
-                "php-parallel-lint/php-parallel-lint": "^1.2",
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^2.0",
-                "phpstan/phpstan-phpunit": "^2.0",
-                "phpstan/phpstan-strict-rules": "^2.0",
-                "phpunit/phpunit": "^9.6",
-                "symfony/process": "^5.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PHPStan\\PhpDocParser\\": [
-                        "src/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PHPDoc parser with support for nullable, intersection and generic types",
-            "support": {
-                "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.1.0"
-            },
-            "time": "2025-02-19T13:28:12+00:00"
-        },
-        {
             "name": "postare/blade-mdi",
             "version": "v1.1.2",
             "source": {
@@ -5009,421 +4531,6 @@
                 }
             ],
             "time": "2025-04-02T08:15:46+00:00"
-        },
-        {
-            "name": "processton/campaign",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/campaign",
-                "reference": "b0ab2b7545939696941b8a6a4bbdc0563b0150a8"
-            },
-            "require": {
-                "filament/filament": "^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Campaigns\\CampaignServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Campaigns\\": "src/",
-                    "Processton\\Campaigns\\Seeders\\": "database/seeders/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Processton",
-                    "email": "ahmadkokab@processton.com"
-                }
-            ],
-            "description": "Campaign module for Processton",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/client",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/client",
-                "reference": "55c90c15736d80f2c4d97e03199cd7468a26dcd7"
-            },
-            "require": {
-                "andreiio/blade-remix-icon": "^3.6",
-                "codeat3/blade-eos-icons": "^1.15",
-                "dedoc/scramble": "^0.12.16",
-                "garygreen/pretty-routes": "^1.0",
-                "laravel/framework": "^12.0",
-                "laravel/tinker": "^2.10.1",
-                "laravel/ui": "^4.6",
-                "php": "^8.2",
-                "processton/locale": "dev-main",
-                "processton/user-profile": "dev-main",
-                "vormkracht10/filament-mails": "^2.3"
-            },
-            "require-dev": {
-                "fakerphp/faker": "^1.23",
-                "laravel/breeze": "^2.3",
-                "laravel/pail": "^1.2.2",
-                "laravel/pint": "^1.13",
-                "laravel/sail": "^1.41",
-                "mockery/mockery": "^1.6",
-                "nunomaduro/collision": "^8.6",
-                "pestphp/pest": "^3.7",
-                "pestphp/pest-plugin-laravel": "^3.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Client\\ClientServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Client\\": "src/",
-                    "Processton\\ClientDatabase\\Factories\\": "database/factories/",
-                    "Processton\\ClientDatabase\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/company",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/company",
-                "reference": "c8fdc684de8afd12cb770c890b142cbf251825b8"
-            },
-            "require": {
-                "codeat3/blade-carbon-icons": "^2.34",
-                "laravel/framework": "^12.0",
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "fakerphp/faker": "^1.23"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Company\\CompanyServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Company\\": "src/",
-                    "Processton\\CompanyDatabase\\Factories\\": "database/factories/",
-                    "Processton\\CompanyDatabase\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/contact",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/contact",
-                "reference": "377c3556e502198d159f8eb6d700686387d6a28b"
-            },
-            "require": {
-                "andreiio/blade-remix-icon": "^3.6",
-                "laravel/framework": "^12.0",
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "fakerphp/faker": "^1.23"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Contact\\ContactServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Contact\\": "src/",
-                    "Processton\\ContactDatabase\\Factories\\": "database/factories/",
-                    "Processton\\ContactDatabase\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/customer",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/customer",
-                "reference": "a58e93d0b616ed15e005ce501650136cffe4eb43"
-            },
-            "require": {
-                "codeat3/blade-carbon-icons": "^2.34",
-                "laravel/framework": "^12.0",
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "fakerphp/faker": "^1.23"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Customer\\CustomerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Customer\\": "src/",
-                    "Processton\\CustomerDatabase\\Factories\\": "database/factories/",
-                    "Processton\\CustomerDatabase\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/form",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/form",
-                "reference": "04cc5744c38bc9bfbec040500db27b143a7208c6"
-            },
-            "require": {
-                "blade-ui-kit/blade-heroicons": "*",
-                "filament/filament": "^3.0",
-                "php": ">=8.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Form\\FormServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Form\\": "src/",
-                    "Processton\\Form\\Seeders\\": "database/seeders/"
-                }
-            },
-            "description": "Filament-based form builder package with drag-and-drop editor.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/items",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/items",
-                "reference": "c18fd29422ea1b86a264fdce48ebeb8a1abb49e7"
-            },
-            "require": {
-                "codeat3/blade-carbon-icons": "^2.34",
-                "eduard9969/blade-polaris-icons": "^2.8",
-                "laravel/framework": "^12.0",
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "fakerphp/faker": "^1.23"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Items\\ItemsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Items\\": "src/",
-                    "Processton\\ItemsDatabase\\Factories\\": "database/factories/",
-                    "Processton\\ItemsDatabase\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/lead",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/lead",
-                "reference": "1858a700ab572ee2363590c54a97325367b6e1f0"
-            },
-            "require": {
-                "codeat3/blade-carbon-icons": "^2.34",
-                "laravel/framework": "^12.0",
-                "mokhosh/filament-kanban": "^2.10",
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "fakerphp/faker": "^1.23"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Lead\\LeadServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Lead\\": "src/",
-                    "Processton\\LeadDatabase\\Factories\\": "database/factories/",
-                    "Processton\\LeadDatabase\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/locale",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/locale",
-                "reference": "d4a02b63fe8e5597e1f2129e0e49b96d14ad518a"
-            },
-            "require": {
-                "andreiio/blade-remix-icon": "^3.6",
-                "blade-ui-kit/blade-heroicons": "^2.6",
-                "codeat3/blade-majestic-icons": "^2.2",
-                "codeat3/blade-solar-icons": "^1.2",
-                "eduard9969/blade-polaris-icons": "^2.8",
-                "filament/filament": "^3.3",
-                "pelmered/filament-money-field": "^1.5",
-                "postare/blade-mdi": "^1.0",
-                "spatie/laravel-stats": "^2.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Locale\\LocaleServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Locale\\": "src/",
-                    "Processton\\LocaleDatabase\\Factories\\": "database/factories/",
-                    "Processton\\LocaleDatabase\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/org",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/org",
-                "reference": "ee6578ee5cefc1d05de62c0a7934958254407b30"
-            },
-            "require": {
-                "codeat3/blade-carbon-icons": "^2.34",
-                "laravel/framework": "^12.0",
-                "php": "^8.2"
-            },
-            "require-dev": {
-                "fakerphp/faker": "^1.23"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\Org\\OrgServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\Org\\": "src/",
-                    "Processton\\OrgDatabase\\Factories\\": "database/factories/",
-                    "Processton\\OrgDatabase\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
-        },
-        {
-            "name": "processton/user-profile",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "./packages/processton/user-profile",
-                "reference": "7582fcf092bdeb0f44c702da7bb3aa8031018f43"
-            },
-            "require": {
-                "filament/filament": "^3.3",
-                "owenvoke/blade-fontawesome": "^2.9",
-                "spatie/laravel-stats": "^2.3"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Processton\\UserProfile\\UserProfileServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Processton\\UserProfile\\": "src/",
-                    "Processton\\UserProfile\\Factories\\": "database/factories/",
-                    "Processton\\UserProfile\\Seeders\\": "database/seeders/"
-                }
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            }
         },
         {
             "name": "psr/cache",
@@ -5885,85 +4992,6 @@
                 "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
             },
             "time": "2021-10-29T13:26:27+00:00"
-        },
-        {
-            "name": "psy/psysh",
-            "version": "v0.12.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/85057ceedee50c49d4f6ecaff73ee96adb3b3625",
-                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-tokenizer": "*",
-                "nikic/php-parser": "^5.0 || ^4.0",
-                "php": "^8.0 || ^7.4",
-                "symfony/console": "^7.0 || ^6.0 || ^5.0 || ^4.0 || ^3.4",
-                "symfony/var-dumper": "^7.0 || ^6.0 || ^5.0 || ^4.0 || ^3.4"
-            },
-            "conflict": {
-                "symfony/console": "4.4.37 || 5.3.14 || 5.3.15 || 5.4.3 || 5.4.4 || 6.0.3 || 6.0.4"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.2"
-            },
-            "suggest": {
-                "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
-                "ext-pdo-sqlite": "The doc command requires SQLite to work.",
-                "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well."
-            },
-            "bin": [
-                "bin/psysh"
-            ],
-            "type": "library",
-            "extra": {
-                "bamarni-bin": {
-                    "bin-links": false,
-                    "forward-command": false
-                },
-                "branch-alias": {
-                    "dev-main": "0.12.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "Psy\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Justin Hileman",
-                    "email": "justin@justinhileman.info",
-                    "homepage": "http://justinhileman.com"
-                }
-            ],
-            "description": "An interactive shell for modern PHP.",
-            "homepage": "http://psysh.org",
-            "keywords": [
-                "REPL",
-                "console",
-                "interactive",
-                "shell"
-            ],
-            "support": {
-                "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.8"
-            },
-            "time": "2025-03-16T03:05:19+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -9030,163 +8058,6 @@
             "time": "2024-11-21T01:49:47+00:00"
         },
         {
-            "name": "vormkracht10/filament-mails",
-            "version": "v2.3.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vormkracht10/filament-mails.git",
-                "reference": "c8127787cba01da16132617e09c46aa2d9ffa181"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vormkracht10/filament-mails/zipball/c8127787cba01da16132617e09c46aa2d9ffa181",
-                "reference": "c8127787cba01da16132617e09c46aa2d9ffa181",
-                "shasum": ""
-            },
-            "require": {
-                "filament/filament": "^3.0",
-                "php": "^8.1",
-                "spatie/laravel-package-tools": "^1.15.0",
-                "vormkracht10/laravel-mails": "^1.0"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.0",
-                "nunomaduro/collision": "^7.9",
-                "nunomaduro/larastan": "^2.0.1",
-                "orchestra/testbench": "^8.0",
-                "pestphp/pest": "^2.1",
-                "pestphp/pest-plugin-arch": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.0",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "aliases": {
-                        "FilamentMails": "Vormkracht10\\FilamentMails\\Facades\\FilamentMails"
-                    },
-                    "providers": [
-                        "Vormkracht10\\FilamentMails\\FilamentMailsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Vormkracht10\\FilamentMails\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Baspa",
-                    "email": "hello@baspa.dev",
-                    "role": "Developer"
-                }
-            ],
-            "description": "View logged mails and events in a beautiful Filament UI.",
-            "homepage": "https://github.com/vormkracht10/filament-mails",
-            "keywords": [
-                "filament-mails",
-                "laravel",
-                "vormkracht10"
-            ],
-            "support": {
-                "issues": "https://github.com/vormkracht10/filament-mails/issues",
-                "source": "https://github.com/vormkracht10/filament-mails"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/vormkracht10",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-05-26T17:26:20+00:00"
-        },
-        {
-            "name": "vormkracht10/laravel-mails",
-            "version": "v1.4.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vormkracht10/laravel-mails.git",
-                "reference": "0d3827c416b15a06db1e6f3b6676903d91bb6c13"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vormkracht10/laravel-mails/zipball/0d3827c416b15a06db1e6f3b6676903d91bb6c13",
-                "reference": "0d3827c416b15a06db1e6f3b6676903d91bb6c13",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^10.0 || ^11.0 || ^12.0",
-                "laravel/helpers": "^1.7.0",
-                "php": "^8.1",
-                "spatie/laravel-package-tools": "^1.15.0"
-            },
-            "require-dev": {
-                "larastan/larastan": "^3.0",
-                "laravel-notification-channels/discord": "^1.6",
-                "laravel-notification-channels/telegram": "^4.0 || ^5.0 || ^6.0",
-                "laravel/pint": "^1.17.0",
-                "laravel/slack-notification-channel": "^2.5 || ^3.3.2",
-                "nunomaduro/collision": "^7.5.0|^8.4",
-                "orchestra/testbench": "^8.5.0|^9.4.0",
-                "pestphp/pest": "^3.0",
-                "pestphp/pest-plugin-laravel": "^3.0",
-                "phpstan/extension-installer": "^1.4",
-                "phpstan/phpstan-deprecation-rules": "^2.0",
-                "phpstan/phpstan-phpunit": "^2.0",
-                "phpunit/phpunit": "^11.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Vormkracht10\\Mails\\MailsServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Vormkracht10\\Mails\\": "src",
-                    "Vormkracht10\\Mails\\Database\\Factories\\": "database/factories"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mark van Eijk",
-                    "email": "mark@vormkracht10.nl",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Laravel Mails can collect everything you might want to track about the mails that has been sent by your Laravel app.",
-            "homepage": "https://github.com/vormkracht10/laravel-mails",
-            "keywords": [
-                "laravel",
-                "laravel-mails",
-                "vormkracht10"
-            ],
-            "support": {
-                "issues": "https://github.com/vormkracht10/laravel-mails/issues",
-                "source": "https://github.com/vormkracht10/laravel-mails/tree/v1.4.4"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/vormkracht10",
-                    "type": "github"
-                }
-            ],
-            "time": "2025-05-20T09:41:51+00:00"
-        },
-        {
             "name": "webmozart/assert",
             "version": "1.11.0",
             "source": {
@@ -9616,19 +8487,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "processton/campaign": 20,
-        "processton/client": 20,
-        "processton/company": 20,
-        "processton/contact": 20,
-        "processton/customer": 20,
-        "processton/form": 20,
-        "processton/items": 20,
-        "processton/lead": 20,
-        "processton/locale": 20,
-        "processton/org": 20,
-        "processton/user-profile": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
