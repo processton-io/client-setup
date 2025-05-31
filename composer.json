@@ -4,7 +4,6 @@
   "require": {
     "php": "^8.2",
     "laravel/framework": "^12.0",
-    "processton/access-controll": "dev-main",
     "processton/client": "dev-main",
     "processton/company": "dev-main",
     "processton/contact": "dev-main",
@@ -40,13 +39,6 @@
     {
       "type": "path",
       "url": "./packages/processton/locale",
-      "options": {
-        "symlink": false
-      }
-    },
-    {
-      "type": "path",
-      "url": "./packages/processton/access-controll",
       "options": {
         "symlink": false
       }
@@ -112,7 +104,10 @@
     "psr-4": {
       "Processton\\Setup\\": "src/",
       "Processton\\SetupDatabase\\Factories\\": "database/factories/",
-      "Processton\\SetupDatabase\\Seeders\\": "database/seeders/"
+      "Processton\\SetupDatabase\\Seeders\\": "database/seeders/",
+      "Processton\\AccessControll\\": "./packages/processton/access-controll/src/",
+      "Processton\\AccessControll\\Factories\\": "./packages/processton/access-controll/database/factories/",
+      "Processton\\AccessControll\\Seeders\\": "./packages/processton/access-controll/database/seeders/"
     }
   },
   "config": {
@@ -125,7 +120,8 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Processton\\Setup\\SetupServiceProvider"
+        "Processton\\Setup\\SetupServiceProvider",
+        "Processton\\AccessControll\\AccessControllServiceProvider"
       ]
     }
   }
