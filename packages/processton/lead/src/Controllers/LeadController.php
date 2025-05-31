@@ -1,6 +1,6 @@
 <?php
 
-namespace Processton\Lead\Http\Controllers;
+namespace Processton\Lead\Controllers;
 
 use Processton\Lead\Http\Requests\StoreLeadRequest;
 use Processton\Lead\Http\Requests\UpdateLeadRequest;
