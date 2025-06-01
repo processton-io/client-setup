@@ -7,6 +7,8 @@ use Processton\Customer\Middleware\URLMustHaveCustomer;
 
 
 Route::prefix('/set/currency/{profile}')->middleware([
+    'web',
+    'auth',    
     URLMustHaveCustomer::class,
 ])->group(function () {
     Route::get('/', [SetCustomerCurrencyController::class, 'index'])->name('client.set.currency');
