@@ -68,4 +68,5 @@
     <div class="text-center">
         <p class="text-muted-foreground text-lg">You are not allowed to create new profile.</p>
     </div>
+    @endif
 </x-guest-layout>
