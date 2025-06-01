@@ -16,7 +16,7 @@ class UserMustBeEligibleToEditOrg
     public function handle(Request $request, Closure $next): Response
     {
 
-        if($request->hasRole('Super Admin')){
+        if($request->user() && $request->user()->hasRole('Super Admin')){
             return $next($request);
         }
         abort(403, "You are not allowed to edit this organization.");
