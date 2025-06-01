@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('contact_id')->nullable()->constrained('contacts')->onDelete('set null');
+        });
+
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('prefix')->nullable();
-            $table->string('first_name');
+            $table->string('first_name')->nullable();
             $table->string('last_name');
             $table->string('email')->unique()->nullable();
             $table->string('phone')->nullable();
@@ -30,6 +34,12 @@ return new class extends Migration
      */
     public function down(): void
     {
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['contact_id']);
+            $table->dropColumn('contact_id');
+        });
+
         Schema::dropIfExists('contacts');
     }
 };

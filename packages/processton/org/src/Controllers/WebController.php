@@ -5,6 +5,8 @@ namespace Processton\Org\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Processton\Org\Models\Org;
+use Processton\Customer\Models\Customer;
+use Processton\Company\Models\Company;
 
 class WebController extends Controller
 {
@@ -37,6 +39,18 @@ class WebController extends Controller
                     $setting->save();
                 }
             }
+
+            $company = Company::create([
+                'name' => $validated['title'],
+            ]);
+
+            Customer::create([
+                'identifier' => 'org',
+                'is_personal' => false,
+                'enable_portal' => true,
+                'company_id' => $company->id
+            ]);
+
 
             session()->flash('success', 'Org Basic Profile updated successfully');
 
@@ -82,6 +96,12 @@ class WebController extends Controller
                     $setting->org_value = $validated[$setting->org_key];
                     $setting->save();
                 }
+            }
+
+            $customer = Customer::where('identifier', 'org')->first();
+            if ($customer) {
+                $customer->currency_id = $validated['primary_currency'];
+                $customer->save();
             }
 
             session()->flash('success', 'Org Basic Profile updated successfully');
