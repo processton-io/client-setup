@@ -27,5 +27,10 @@ class Product extends Model
         return ProductFactory::new();
     }
 
+    public function item()
+    {
+        return $this->hasOne(Item::class, 'entity_id')->where('entity_type', Product::class);
+    }
+
 
 }

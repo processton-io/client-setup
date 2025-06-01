@@ -22,11 +22,6 @@ trait IsAnItem
         });
     }
 
-    public function item()
-    {
-        return $this->morphTo(Item::class, 'entity');
-    }
-
     protected static function validateAttributes(array $attributes)
     {
         if (empty($attributes['name'])) {
@@ -41,9 +36,9 @@ trait IsAnItem
         ]);
     }
 
-    protected function setPrice($price = 0.00){
+    public function setPrice($price = 0.00){
 
-        $this->item()->update([
+        $this->item->update([
             'price' => $this->price
         ]);
     }

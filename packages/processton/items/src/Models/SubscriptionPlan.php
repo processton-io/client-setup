@@ -27,4 +27,9 @@ class SubscriptionPlan extends Model
         return SubscriptionPlanFactory::new();
     }
 
+    public function item()
+    {
+        return $this->hasOne(Item::class, 'entity_id')->where('entity_type', SubscriptionPlan::class);
+    }
+
 }

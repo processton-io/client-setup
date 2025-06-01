@@ -27,4 +27,9 @@ class Asset extends Model
         return AssetFactory::new();
     }
 
+    public function item()
+    {
+        return $this->hasOne(Item::class, 'entity_id')->where('entity_type', Asset::class);
+    }
+
 }

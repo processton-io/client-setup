@@ -27,4 +27,9 @@ class Service extends Model
         return ServiceFactory::new();
     }
 
+    public function item()
+    {
+        return $this->hasOne(Item::class, 'entity_id')->where('entity_type', Service::class);
+    }
+
 }
