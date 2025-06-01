@@ -10,10 +10,12 @@ use Processton\Contact\Models\Contact;
 use Processton\CustomerDatabase\Factories\CustomerFactory;
 use Processton\Locale\Models\Address;
 use Processton\Locale\Models\Currency;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 class Customer extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
+    protected $table = 'customers';
 
     /**
      * Create a new factory instance for the model.

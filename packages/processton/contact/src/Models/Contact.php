@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Processton\ContactDatabase\Factories\ContactFactory;
 use Processton\Customer\Models\Customer;
 use Processton\Customer\Models\CustomerContact;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 class Contact extends Model
 {
 
-    use HasFactory;
+    use HasFactory, HasUuids;
+    protected $table = 'contacts';
 
 
     public static function registerUser($user)

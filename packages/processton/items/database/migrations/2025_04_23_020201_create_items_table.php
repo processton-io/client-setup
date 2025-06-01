@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('entity_type');
             $table->foreignUuid('entity_id');
             $table->string('sku')->unique();
@@ -27,28 +27,28 @@ return new class extends Migration {
         });
 
         Schema::create('products', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::create('services', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::create('subscription_plans', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::create('assets', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->softDeletes();
             $table->timestamps();
