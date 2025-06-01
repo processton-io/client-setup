@@ -38,7 +38,7 @@ jobs:
           IFS='.' read -r -a parts <<< "$CURRENT_VERSION"
           PATCH=$((parts[2]+1))
           NEXT_VERSION="${parts[0]}.${parts[1]}.$PATCH"
-          jq --arg v "$NEXT_VERSION" '.version = $v | .["minimum-stability"] = $v' composer.json > composer.json.tmp && mv composer.json.tmp composer.json
+          jq --arg v "$NEXT_VERSION" '.version = $v' composer.json > composer.json.tmp && mv composer.json.tmp composer.json
           echo "Bumped version: $NEXT_VERSION"
           echo "next_version=$NEXT_VERSION" >> $GITHUB_OUTPUT
 

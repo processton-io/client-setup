@@ -2,7 +2,8 @@
   "name": "processton/setup",
   "version": "0.0.8",
   "license": "MIT",
-  "minimum-stability": "0.0.8",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "php": "^8.2",
     "laravel/framework": "^12.0",
