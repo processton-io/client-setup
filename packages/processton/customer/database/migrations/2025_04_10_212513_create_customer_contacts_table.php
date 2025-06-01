@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('customer_contacts', function (Blueprint $table) {
             $table->id();
-            $table->foriegnUuid('customer_id')->constrained('customers')->onDelete('cascade');
-            $table->foriegnUuid('contact_id')->constrained('contacts')->onDelete('cascade');
+            $table->foreignUuid('customer_id')->constrained('customers')->onDelete('cascade');
+            $table->foreignUuid('contact_id')->constrained('contacts')->onDelete('cascade');
             $table->string('job_title')->nullable();       // e.g., Manager, Director
             $table->string('department')->nullable();        // Sales, Marketing, etc.
             $table->timestamps();
