@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->string('sku')->unique();
             $table->double('price', 10, 2);
             $table->foreignId('currency_id')->constrained('currencies')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -28,24 +29,28 @@ return new class extends Migration {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::create('subscription_plans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::create('assets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
