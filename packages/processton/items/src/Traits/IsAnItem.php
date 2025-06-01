@@ -37,9 +37,18 @@ trait IsAnItem
     }
 
     public function setPrice($price = 0.00){
+        $item = $this->item;
 
-        $this->item->update([
-            'price' => $this->price
-        ]);
+        if (!$item) {
+            throw new \Exception('Item not found for this entity.');
+        }
+
+        if (!is_numeric($price) || $price < 0) {
+            throw new \InvalidArgumentException('Price must be a non-negative number.');
+        }
+        $item->price = $price;
+
+        $item->save();
+
     }
 }
