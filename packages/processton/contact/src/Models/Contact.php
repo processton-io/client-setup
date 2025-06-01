@@ -17,7 +17,7 @@ class Contact extends Model
     public static function registerUser($user)
     {
         $contact = new self();
-        $contact->first_name = $user->name;
+        $contact->last_name = $user->name;
         $contact->email = $user->email;
         $contact->save();
 
@@ -25,7 +25,7 @@ class Contact extends Model
         $user->contact_id = $contact->id;
         $user->save();
     }
-    
+
     /**
      * Create a new factory instance for the model.
      */

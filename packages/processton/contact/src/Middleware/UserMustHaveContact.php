@@ -21,8 +21,8 @@ class UserMustHaveContact
         if ($request->user() && !$contact = $request->user()->contact) {
             // Auto create a contact for the user
             $contact = Contact::create([
-                'first_name' => $request->user()->name,
-                'last_name' => '',
+                'first_name' => '',
+                'last_name' => $request->user()->name,
                 'email' => $request->user()->email,
                 'phone' => '',
             ]);
