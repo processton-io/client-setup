@@ -88,19 +88,29 @@ class Item extends Model
             return;
         }
 
-        
-        // ensure that the model is one of the supported types such as Product, Service, SubscriptionPlan, Asset or any model that extends Product, Service, SubscriptionPlan, Asset models
-        if (!in_array(get_class($model), [
+        $modelType = get_class($model);
+
+        $isPrimaryClass = in_array($modelType, [
             Product::class,
             Service::class,
             SubscriptionPlan::class,
             Asset::class
-        ])) {
+        ]);
+
+        $isSubClassOfPrimaryClass = is_subclass_of($model, Product::class) || is_subclass_of($model, Service::class) || is_subclass_of($model, SubscriptionPlan::class) || is_subclass_of($model, Asset::class);
+        
+
+        if( !$isPrimaryClass && !$isSubClassOfPrimaryClass) {
             throw new \InvalidArgumentException("Invalid entity type: " . get_class($model));
         }
         
+        if( $isSubClassOfPrimaryClass ){
+            // If the model is a subclass of one of the primary classes, we need to get the parent class
+            $modelType = get_parent_class($model);
+        }
+        
         //Check if the entity is already registered if not register it
-        if (self::where('entity_type', get_class($model))
+        if (self::where('entity_type', $modelType)
             ->where('entity_id', $model->id)
             ->exists()) 
             {
@@ -108,7 +118,7 @@ class Item extends Model
             }else{
                 // Create a new item instance
                 $item = new self();
-                $item->entity_type = get_class($model);
+                $item->entity_type = $modelType;
                 $item->entity_id = $model->id;
                 $item->sku = uniqid($model->getTable() . '_');
                 $item->price = 0.0; // Default price, can be updated later
