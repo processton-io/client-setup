@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Processton\ItemsDatabase\Factories\SubscriptionPlanFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Processton\Items\Traits\isAnItem;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 class SubscriptionPlan extends Model
 {
-    use HasFactory;
+    use HasFactory, isAnItem, HasUuids;
 
     protected $table = 'subscription_plans';
 
@@ -18,47 +20,11 @@ class SubscriptionPlan extends Model
     ];
 
     /**
-     * 
-     * Boot method to register the entity in the Item model
-     * 
-     * After creating a new element make sure to register it in the Item model
-     * so it can be used as an item.
-     */
-
-    protected static function booted()
-    {
-        static::created(function ($model) {
-            Item::registerEntity($model);
-        });
-    }
-
-    /**
      * Create a new factory instance for the model.
      */
     protected static function newFactory()
     {
         return SubscriptionPlanFactory::new();
-    }
-
-    public function item()
-    {
-        return $this->morphTo(Item::class, 'entity');
-    }
-
-
-    protected static function validateAttributes(array $attributes)
-    {
-        if (empty($attributes['name'])) {
-            throw new \InvalidArgumentException('The name attribute is required.');
-        }
-    }
-    
-
-    protected static function createEntity(array $attributes = [])
-    {
-        return static::create([
-            'name' => $attributes['name'] ?? '',
-        ]);
     }
 
 }

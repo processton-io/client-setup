@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Processton\ItemsDatabase\Factories\ItemsFactory;
 use Processton\Locale\Models\Currency;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 class Item extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuids;
 
     /**
      * The table associated with the model.

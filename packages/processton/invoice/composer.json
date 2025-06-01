@@ -1,0 +1,22 @@
+{
+    "name": "processton/invoice",
+    "require": {
+        "spatie/laravel-stats": "^2.3",
+        "owenvoke/blade-fontawesome": "^2.9",
+        "filament/filament": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Processton\\Invoice\\": "src/",
+            "Processton\\Invoice\\Factories\\": "database/factories/",
+            "Processton\\Invoice\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\Invoice\\InvoiceServiceProvider"
+            ]
+        }
+    }
+}

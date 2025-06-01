@@ -1,0 +1,22 @@
+{
+    "name": "processton/order",
+    "require": {
+        "spatie/laravel-stats": "^2.3",
+        "owenvoke/blade-fontawesome": "^2.9",
+        "filament/filament": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Processton\\Order\\": "src/",
+            "Processton\\Order\\Factories\\": "database/factories/",
+            "Processton\\Order\\Seeders\\": "database/seeders/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Processton\\Order\\OrderServiceProvider"
+            ]
+        }
+    }
+}
