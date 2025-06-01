@@ -1,9 +1,10 @@
 <?php
 
-namespace Processton\OrderDatabase\Factories;
+namespace Processton\Order\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Processton\Order\Models\Order;
+use Processton\Order\Models\OrderItem;
 class OrderItemFactory extends Factory
 {
     /**
@@ -11,7 +12,7 @@ class OrderItemFactory extends Factory
      *
      * @var string
      */
-    protected $model = \Processton\Order\Models\OrderItem::class;
+    protected $model = OrderItem::class;
 
     /**
      * Define the model's default state.
@@ -21,7 +22,7 @@ class OrderItemFactory extends Factory
     public function definition()
     {
         return [
-            'order_id' => \Processton\Order\Models\Order::factory(),
+            'order_id' => Order::factory(),
             'item_id' => null, // This should be set to a valid item ID later
             'item_type' => 'product', // or 'service', depending on your use case
             'quantity' => $this->faker->numberBetween(1, 10),

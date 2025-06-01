@@ -1,6 +1,6 @@
 <?php
 
-namespace Processton\OrderDatabase\Factories;
+namespace Processton\Order\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Processton\Order\Models\Order;
