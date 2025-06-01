@@ -22,9 +22,9 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'customer_id' => \Processton\Order\Models\Order::factory(),
+            'customer_id' => \Processton\Customer\Models\Customer::factory(),
             'total_amount' => $this->faker->randomFloat(2, 50, 500),
-            'currency' => 'USD',
+            'currency' => 1,
             'order_date' => $this->faker->dateTimeThisYear(),
             'shipping_address' => $this->faker->address,
             'billing_address' => $this->faker->address,
