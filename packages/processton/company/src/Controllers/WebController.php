@@ -47,6 +47,8 @@ class WebController extends Controller
 
             $customer->save();
 
+            $company_profile_allowed = !$user->hasRole('Community User');
+
             CustomerContact::create([
                 'customer_id' => $customer->id,
                 'contact_id' => $contact->id,
@@ -62,7 +64,8 @@ class WebController extends Controller
         }
 
         return view('processton-company::set-company',[
-            'can_create_personal_profile' => $personal_allowed
+            'can_create_personal_profile' => $personal_allowed,
+            'company_profile_allowed' => $user->hasRole('Community User') ? true : false,
         ]);
     }
 

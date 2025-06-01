@@ -5,16 +5,16 @@
     </div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-
+    @if($company_profile_allowed || $can_create_personal_profile)
     <form method="POST" action="{{ route('processton-company.set.company') }}">
         @csrf
-
+        @if($company_profile_allowed)
         <div id="company-name-field">
             <x-input-label id="company_name_field" for="company_name" :value="__('Company Name')" />
             <x-text-input id="company_name" placeholder="your company name..." class="block mt-1 w-full" type="text" name="company_name" :value="old('company_name')" required autofocus autocomplete="company_name" />
             <x-input-error :messages="$errors->get('company_name')" class="mt-2" />
         </div>
-
+        @endif
         @if($can_create_personal_profile)
         <!-- Remember Me -->
         <div class="block mt-4">
@@ -23,7 +23,6 @@
                 <span class="ms-2 text-sm text-gray-600">{{ __('I am signing up my personal profile') }}</span>
             </label>
         </div>
-
         @endif
 
         <input type="hidden" name="ret_url" value="{{ request()->get('ret_url','/') }}">
@@ -65,4 +64,8 @@
             toggleCompanyNameField();
         });
     </script>
+    @else
+    <div class="text-center">
+        <p class="text-muted-foreground text-lg">You are not allowed to create new profile.</p>
+    </div>
 </x-guest-layout>
