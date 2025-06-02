@@ -1,14 +1,22 @@
 <?php
 
-namespace Processton\Company\Controllers;
+namespace Processton\Cart\Controllers\Web;
 
-use App\Models\User;
 use Processton\Cart\Controllers\Controller;
-use Processton\Customer\Models\CustomerContact;
+use Processton\Customer\Models\Customer;
 
 class WebController extends Controller
 {
 
-    
+    public function checkout($profile)
+    {
+        $user = auth()->user();
+
+        $customer = Customer::find($profile);
+
+        return view('processton-cart::checkout', [
+            'user' => $user,
+        ]);
+    }
 
 }

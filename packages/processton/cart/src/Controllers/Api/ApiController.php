@@ -28,7 +28,19 @@ class ApiController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'data' => $cart,
+            'data' => [
+                'id' => $cart->id,
+                'user_id' => $cart->user_id,
+                'items' => $cart->items->map(function ($item) {
+                    return [
+                        'id' => $item->item_id,
+                        'name' => $item->item->entity->name,
+                        'quantity' => $item->quantity,
+                        'price' => $item->item->price,
+                        'total' => $item->quantity * $item->item->price,
+                    ];
+                })->toArray(),
+            ],
         ]);
     }
 
@@ -45,30 +57,48 @@ class ApiController extends Controller
 
         $cart = \Processton\Cart\Models\Cart::findOrFail($cartId);
 
-        $items = $cart->items()
-            ->where('name', 'like', '%' . $query . '%')
-            ->orWhere('description', 'like', '%' . $query . '%')
+        //Join items with products services asset and subscriptions and search across them
+
+
+        $products = \Processton\Items\Models\Product::where('name', 'like', '%' . $query . '%')
             ->get();
 
         return response()->json([
             'status' => 'success',
-            'data' => $items,
+            'data' => $products->map(function ($product) {
+                return [
+                    'id' => $product->item->id,
+                    'name' => $product->name,
+                    'price' => $product->item->price,
+                    'type' => 'product',
+                ];
+            })->toArray()
         ]);
     }
 
-    public function addItem($cartId, $itemId, $quantity = 1)
+    public function addItem($cartId)
     {
+        $data = request()->validate([
+            'product_id' => 'required|uuid|exists:items,id',
+            'quantity' => 'required|integer|min:1',
+        ]);
+        
+        $itemId = $data['product_id'];
+        $quantity = $data['quantity'];
+
         $cart = \Processton\Cart\Models\Cart::findOrFail($cartId);
 
-        $item = \Processton\Cart\Models\CartItem::where('cart_id', $cartId)
+        $item = \Processton\Items\Models\Item::find($itemId);
+
+        $cartItem = \Processton\Cart\Models\CartItem::where('cart_id', $cart->id)
             ->where('item_id', $itemId)
             ->first();
 
-        if ($item) {
-            $item->increment('quantity', $quantity);
+        if ($cartItem) {
+            $cartItem->increment('quantity', $quantity);
         } else {
-            $item = \Processton\Cart\Models\CartItem::create([
-                'cart_id' => $cartId,
+            $cartItem = \Processton\Cart\Models\CartItem::create([
+                'cart_id' => $cart->id,
                 'item_id' => $itemId,
                 'quantity' => $quantity,
             ]);
@@ -77,7 +107,7 @@ class ApiController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'Item added to cart successfully',
-            'data' => $item,
+            'data' => $cartItem,
         ]);
     }
 
