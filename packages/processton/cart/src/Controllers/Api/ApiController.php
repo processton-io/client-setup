@@ -32,8 +32,10 @@ class ApiController extends Controller
         ]);
     }
 
-    public function searchItems($cartId, $query)
+    public function searchItems($cartId)
     {
+        $query = request()->input('q', '');
+        
         $cart = \Processton\Cart\Models\Cart::findOrFail($cartId);
 
         $items = $cart->items()
