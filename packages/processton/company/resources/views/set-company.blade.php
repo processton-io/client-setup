@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="flex flex-col items-start gap-2 sm:items-center md:text-left mb-4">
+    <div class="flex flex-col items-start gap-2 text-center md:text-left  mb-4">
         <h1 class="text-xl font-medium">Company Information</h1>
         <p class="text-muted-foreground text-sm text-balance">Please enter your company name</p>
     </div>
