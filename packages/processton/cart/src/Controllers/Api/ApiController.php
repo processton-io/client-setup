@@ -35,7 +35,14 @@ class ApiController extends Controller
     public function searchItems($cartId)
     {
         $query = request()->input('q', '');
-        
+
+        if (empty($query)) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Search query cannot be empty',
+            ], 400);
+        }
+
         $cart = \Processton\Cart\Models\Cart::findOrFail($cartId);
 
         $items = $cart->items()
