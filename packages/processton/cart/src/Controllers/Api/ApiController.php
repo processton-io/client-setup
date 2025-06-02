@@ -1,6 +1,6 @@
 <?php
 
-namespace Processton\Cart\Controllers\Web;
+namespace Processton\Cart\Controllers\Api;
 
 use App\Models\User;
 use Processton\Cart\Controllers\Controller;

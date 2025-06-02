@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Processton\Cart\Controllers\ApiController;
+use Processton\Cart\Controllers\Api\ApiController;
 
 Route::middleware([
     'api'
