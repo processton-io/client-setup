@@ -82,7 +82,7 @@
         "Processton\\Setup\\SetupServiceProvider",
         "Processton\\Client\\ClientServiceProvider",
         "Processton\\AccessControll\\AccessControllServiceProvider",
-        "Processton\\Company\\CompanyServiceProvider",
+        "Processton\\Cart\\CartServiceProvider",
         "Processton\\Campaigns\\CampaignServiceProvider",
         "Processton\\Company\\CompanyServiceProvider",
         "Processton\\Contact\\ContactServiceProvider",
