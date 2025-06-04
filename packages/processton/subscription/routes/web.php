@@ -12,9 +12,9 @@ Route::middleware([
 
     Route::any('c/{profile}/subscribe/{planId}', [WebController::class , 'subscribe'])->name('processton-subscribe.subscribe');
 
-    Route::any('c/{profile}/{subscriptionId}', [WebController::class , 'show'])->name('processton-subscribe.show');
+    Route::any('c/{profile}/subscription/{subscriptionId}', [WebController::class , 'show'])->name('processton-subscribe.show');
 
-    Route::any('c/{profile}/{subscriptionId}/cancel', [WebController::class , 'cancel'])->name('processton-subscribe.cancel');
+    Route::any('c/{profile}/subscription/{subscriptionId}/cancel', [WebController::class , 'cancel'])->name('processton-subscribe.cancel');
 
-    Route::any('c/{profile}/{subscriptionId}/renew', [WebController::class , 'update'])->name('processton-subscribe.renew');
+    Route::any('c/{profile}/subscription/{subscriptionId}/renew', [WebController::class , 'update'])->name('processton-subscribe.renew');
 });
