@@ -71,7 +71,7 @@ class WebController extends Controller
                          ->with('success', 'Subscription cancelled successfully');
     }
 
-    public function subscibe($profile, $planId, Request $request)
+    public function subscribe($profile, $planId, Request $request)
     {
         $user = auth()->user();
 
