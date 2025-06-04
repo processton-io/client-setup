@@ -33,6 +33,6 @@
         </form>
     @endif
 
-    <a href="{{ route('processton-subscribe.index', ['subscriptionId' => $subscription->id, 'profile' => $customer->id ]) }}" class="block text-center mt-6 text-gray-600 hover:text-gray-900 underline">Back to Subscriptions</a>
+    <a href="{{ route('processton-subscribe.index', ['profile' => $customer->id ]) }}" class="block text-center mt-6 text-gray-600 hover:text-gray-900 underline">Back to Subscriptions</a>
 </div>
 </x-app-layout>
