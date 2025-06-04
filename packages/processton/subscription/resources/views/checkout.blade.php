@@ -2,17 +2,17 @@
     <div class="max-w-lg mx-auto mt-10 bg-white p-8 rounded shadow">
         <h2 class="text-2xl font-bold mb-4">Subscribe to Plan</h2>
         <div class="mb-4">
-            <strong>User:</strong> {{ $user->name }} ({{ $user->email }})
+            <strong>Customer:</strong> {{ $customer->name }} ({{ $user->email }})
         </div>
         <div class="mb-4">
             <strong>Plan:</strong> {{ $plan->name }}<br>
             <span class="text-gray-600">Price: {{ $plan->price }} {{ $plan->currency }}</span>
         </div>
-        <form method="POST" action="{{ route('subscription.subscribe', ['plan' => $plan->id]) }}" x-data="{ consent: false }">
+        <form method="POST" action="{{ route('processton-subscribe.index', ['planId' => $plan->id, 'profile' => $customer->id ]) }}" x-data="{ consent: false }">
             @csrf
             <div class="mb-4">
                 <label class="inline-flex items-center">
-                    <input type="checkbox" x-model="consent" class="form-checkbox">
+                    <input type="checkbox" x-model="consent" class="form-checkbox" name="terms">
                     <span class="ml-2">I agree to subscribe to this plan and authorize payment.</span>
                 </label>
             </div>

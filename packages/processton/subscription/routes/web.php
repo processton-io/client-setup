@@ -1,14 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use Processton\Subscription\Controllers\WebController;
 
 Route::middleware([
     'web'
-])->prefix('{profile}')->group(function () {
-    Route::prefix('/subscibe/{planId}')->group(function () {
-        Route::get('/', [WebController::class , 'subscribe'])->name('processton-subscribe.index');
-        Route::post('/', [WebController::class , 'doSubscibe'])->name('processton-subscribe.index.process');
-        
-    });
+])->group(function () {
+
+    Route::any('c/{profile}/subscriptions', [WebController::class , 'index'])->name('processton-subscribe.index');
+
+    Route::any('c/{profile}/subscribe/{planId}', [WebController::class , 'subscribe'])->name('processton-subscribe.subscribe');
+
+    Route::any('c/{profile}/{subscriptionId}', [WebController::class , 'show'])->name('processton-subscribe.show');
+
+    Route::any('c/{profile}/{subscriptionId}', [WebController::class , 'cancel'])->name('processton-subscribe.cancel');
+
+    Route::any('c/{profile}/{subscriptionId}', [WebController::class , 'update'])->name('processton-subscribe.renew');
 });
