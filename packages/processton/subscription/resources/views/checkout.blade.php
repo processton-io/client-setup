@@ -8,7 +8,7 @@
             <strong>Plan:</strong> {{ $plan->name }}<br>
             <span class="text-gray-600">Price: {{ $plan->price }} {{ $plan->currency }}</span>
         </div>
-        <form method="POST" action="{{ route('processton-subscribe.index', ['planId' => $plan->id, 'profile' => $customer->id ]) }}" x-data="{ consent: false }">
+        <form method="POST" action="{{ route('processton-subscribe.subscribe', ['planId' => $plan->id, 'profile' => $customer->id ]) }}" x-data="{ consent: false }">
             @csrf
             <div class="mb-4">
                 <label class="inline-flex items-center">

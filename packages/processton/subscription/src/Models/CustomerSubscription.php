@@ -29,6 +29,15 @@ class CustomerSubscription extends Model
         'frequency_interval',
     ];
 
+    protected $casts = [
+        'payment_method' => 'array',
+        'end_date' => 'datetime',
+        'cancelled_at' => 'datetime',
+        'last_payment_date' => 'datetime',
+        'next_payment_date' => 'datetime',
+        'trial_ends_at' => 'datetime',
+    ];
+
     /**
      * Create a new factory instance for the model.
      */
