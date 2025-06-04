@@ -31,9 +31,9 @@ Route::middleware([
             URLMustHaveCustomer::class,
         ])->group(function () {
 
-            Route::get('/set/currency', [SetCustomerCurrencyController::class, 'index'])
-                ->name('client.set.currency');
-            Route::post('/set/currency', [SetCustomerCurrencyController::class, 'index']);
+            // Route::get('/set/currency', [SetCustomerCurrencyController::class, 'index'])
+            //     ->name('client.set.currency');
+            // Route::post('/set/currency', [SetCustomerCurrencyController::class, 'index']);
 
             Route::get('/set/address', [SetCustomerAddressController::class, 'index'])
                 ->name('client.set.address');
