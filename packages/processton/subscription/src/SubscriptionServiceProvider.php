@@ -33,7 +33,7 @@ class SubscriptionServiceProvider extends ServiceProvider
     protected function webRouteConfiguration()
     {
         return [
-            'middleware' => config('panels.subscription.middleware.web'),
+            'middleware' => config('panels.subscription.middleware.web', []),
         ];
     }
 
@@ -47,7 +47,7 @@ class SubscriptionServiceProvider extends ServiceProvider
     protected function apiRouteConfiguration()
     {
         return [
-            'middleware' => config('panels.subscription.middleware.api'),
+            'middleware' => config('panels.subscription.middleware.api', []),
         ];
     }
 }
