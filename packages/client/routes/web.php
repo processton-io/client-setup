@@ -25,7 +25,7 @@ Route::middleware([
         UserMustHaveCompany::class,
     ])->group(function () {
 
-        Route::get('/', [SelectProfileController::class, 'index'])->name('dashboard');
+        // Route::get('/', [SelectProfileController::class, 'index'])->name('dashboard');
 
         Route::prefix('c/{profile}')->middleware([
             URLMustHaveCustomer::class,

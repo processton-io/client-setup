@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Processton\Org\Models\Org;
 use Processton\Customer\Models\Customer;
 use Processton\Company\Models\Company;
+use Processton\Contact\Models\Contact;
 
 class WebController extends Controller
 {
@@ -44,11 +45,23 @@ class WebController extends Controller
                 'name' => $validated['title'],
             ]);
 
-            Customer::create([
+            $customer = Customer::create([
                 'identifier' => 'org',
                 'is_personal' => false,
                 'enable_portal' => true,
                 'company_id' => $company->id
+            ]);
+
+            $contact = Contact::create([
+                'first_name' => $request->user()->name,
+                'last_name' => '',
+                'email' => $request->user()->email,
+                'phone' => '',
+            ]);
+
+            $customer->contacts()->attach($contact->id, [
+                'job_title' => 'Admin',
+                'department' => 'Administration',
             ]);
 
 
