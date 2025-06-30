@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('currency_id')->nullable()->constrained();
             $table->foreignId('creator_id')->nullable()->constrained('users');
             $table->foreignId('company_id')->nullable()->constrained('companies')->onDelete('set null');
-            $table->foreignId('contact_id')->nullable()->constrained('contacts')->onDelete('set null');
+            $table->foreignUuid('contact_id')->nullable()->constrained('contacts')->onDelete('set null');
             $table->foreignId('user_id')->nullable()->constrained('users');
             $table->timestamps();
         });
