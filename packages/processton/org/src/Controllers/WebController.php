@@ -52,10 +52,11 @@ class WebController extends Controller
                 'company_id' => $company->id
             ]);
 
-            $contact = Contact::create([
+            $contact = Contact::updateOrCreate([
+                'email' => $request->user()->email,
+            ],[
                 'first_name' => $request->user()->name,
                 'last_name' => '',
-                'email' => $request->user()->email,
                 'phone' => '',
             ]);
 
