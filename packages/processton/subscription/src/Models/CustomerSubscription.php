@@ -62,7 +62,7 @@ class CustomerSubscription extends Model
     }
     public function currency()
     {
-        return $this->belongsTo(\Processton\Currency\Models\Currency::class, 'currency_id');
+        return $this->belongsTo(\Processton\Locale\Models\Currency::class, 'currency_id');
     }
     
 
