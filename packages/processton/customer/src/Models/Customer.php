@@ -26,6 +26,18 @@ class Customer extends Model
         return CustomerFactory::new();
     }
 
+    protected static function booted()
+    {
+        static::created(function ($model) {
+            $color = $model->color;
+            if(!$color){
+                $color = self::getRandomColor();
+                $model->__set('color', $color);
+                $model->save();
+            }
+        });
+    }
+
     protected $fillable = [
         'identifier',
         'is_personal',
@@ -96,11 +108,6 @@ class Customer extends Model
     public function getProfilePictureAttribute()
     {
         $color = $this->color;
-        if(!$color){
-            $color = self::getRandomColor();
-            $this->__set('color', $color);
-            $this->save();
-        }
         $textColor = self::getTextColor($color);
         //Remove starting hash
         $color = ltrim($color, '#');
