@@ -29,7 +29,7 @@ class CrmPanelProvider extends PanelProvider
     {
         return $panel
             ->id('crm')
-            ->path('crm')
+            ->path('app/crm')
             ->brandName('CRM')
             ->topNavigation(true)
             ->colors([

@@ -30,7 +30,7 @@ class LeadPanelProvider extends PanelProvider
     {
         return $panel
             ->id('leads')
-            ->path('leads')
+            ->path('app/leads')
             ->brandName('Marketing Leads')
             ->topNavigation(true)
             ->maxContentWidth('full')

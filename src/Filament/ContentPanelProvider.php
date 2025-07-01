@@ -27,7 +27,7 @@ class ContentPanelProvider extends PanelProvider
     {
         return $panel
             ->id('content')
-            ->path('content')
+            ->path('app/content')
             ->brandName('CMS')
             ->colors([
                 'primary' => Color::hex('#333333'),

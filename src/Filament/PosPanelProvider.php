@@ -27,7 +27,7 @@ class PosPanelProvider extends PanelProvider
     {
         return $panel
             ->id('pos')
-            ->path('pos/{location}')
+            ->path('app/pos/{location}')
             ->brandName('Pos')
             ->colors([
                 'primary' => Color::hex('#333333'),

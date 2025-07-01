@@ -24,7 +24,7 @@ class InventoryPanelProvider extends PanelProvider
     {
         return $panel
             ->id('inventory')
-            ->path('inventory')
+            ->path('app/inventory')
             ->brandName('Invnentory')
             ->topNavigation(true)
             ->colors([

@@ -28,7 +28,7 @@ class SetUpPanelProvider extends PanelProvider
     {
         return $panel
             ->id('setup')
-            ->path('setup')
+            ->path('app/setup')
             ->brandName('Setup')
             ->colors([
                 'primary' => Color::hex('#333333'),
