@@ -51,8 +51,6 @@ class SetUpPanelProvider extends PanelProvider
                 OrgPlugin::make(),
                 AccessControllPlugin::make(),
                 LocalePlugin::make(),
-            ])
-            ->darkMode(false)
-            ->routes(fn () => FilamentMails::routes());
+            ]);
     }
 }
