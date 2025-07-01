@@ -27,7 +27,7 @@ class ServicePanelProvider extends PanelProvider
     {
         return $panel
             ->id('services')
-            ->path('app/services/{location}')
+            ->path('/app/services')
             ->brandName('Services')
             ->colors([
                 'primary' => Color::hex('#333333'),

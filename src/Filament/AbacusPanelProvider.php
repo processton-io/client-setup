@@ -25,7 +25,7 @@ class AbacusPanelProvider extends PanelProvider
     {
         return $panel
             ->id('abacus')
-            ->path('app/abacus')
+            ->path('/app/abacus')
             ->brandName('Abacus')
             ->topNavigation(true)
             ->colors([

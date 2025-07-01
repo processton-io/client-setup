@@ -27,7 +27,7 @@ class ShipmentPanelProvider extends PanelProvider
     {
         return $panel
             ->id('shipment')
-            ->path('app/shipment/{location}')
+            ->path('/app/shipment')
             ->brandName('Shipment')
             ->colors([
                 'primary' => Color::hex('#333333'),
