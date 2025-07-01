@@ -47,9 +47,11 @@ class LeadPanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.locale.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.locale.middleware.auth',[]),
             ])->plugins([
                 LeadPlugin::make(),
                 CampaignPlugin::make(),

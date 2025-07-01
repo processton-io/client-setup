@@ -42,9 +42,11 @@ class ContentPanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.content.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.content.middleware.auth',[]),
             ])->plugins([
             ]);
     }

@@ -41,9 +41,11 @@ class AbacusPanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.abacus.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.abacus.middleware.auth',[]),
             ])->plugins([
             ]);
     }

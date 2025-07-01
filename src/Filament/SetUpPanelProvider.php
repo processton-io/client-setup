@@ -44,9 +44,11 @@ class SetUpPanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.setup.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.setup.middleware.auth',[]),
             ])->plugins([
                 OrgPlugin::make(),
                 AccessControllPlugin::make(),

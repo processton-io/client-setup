@@ -42,9 +42,11 @@ class ShipmentPanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.shipment.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.shipment.middleware.auth',[]),
             ])->plugins([
             ]);
     }

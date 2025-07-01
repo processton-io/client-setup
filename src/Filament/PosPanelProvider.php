@@ -42,9 +42,11 @@ class PosPanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.pos.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.pos.middleware.auth',[]),
             ])->plugins([
             ]);
     }

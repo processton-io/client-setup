@@ -40,9 +40,11 @@ class InventoryPanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.inventory.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.inventory.middleware.auth',[]),
             ])->plugins([
             ]);
     }

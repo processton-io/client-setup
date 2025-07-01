@@ -46,9 +46,11 @@ class CrmPanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.crm.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.crm.middleware.auth',[]),
             ])
             ->plugins([
                 LeadPlugin::make(),

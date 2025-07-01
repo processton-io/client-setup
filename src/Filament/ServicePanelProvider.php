@@ -42,9 +42,11 @@ class ServicePanelProvider extends PanelProvider
             ])
             ->middleware([
                 ...config('panels.middleware.web',[]),
+                ...config('panels.services.middleware.web',[]),
             ])
             ->authMiddleware([
                 ...config('panels.middleware.auth',[]),
+                ...config('panels.services.middleware.auth',[]),
             ])->plugins([
             ]);
     }
