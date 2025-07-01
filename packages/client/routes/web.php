@@ -9,6 +9,9 @@ use Processton\Client\Middleware\CustomerMustHaveCurrency;
 use Processton\Client\Middleware\URLMustHaveCustomer;
 use Processton\Company\Middleware\UserMustHaveCompany;
 use Processton\Contact\Middleware\UserMustHaveContact;
+use Processton\Org\Middleware\OrgMustBeInstalled;
+use Processton\Org\Middleware\OrgMustHaveBasicProfile;
+use Processton\Org\Middleware\OrgMustHaveFinancialProfile;
 
 Route::middleware([
         'web',
@@ -17,6 +20,9 @@ Route::middleware([
     Route::middleware([
         'auth',
         'verified',
+        OrgMustBeInstalled::class,
+        OrgMustHaveBasicProfile::class,
+        OrgMustHaveFinancialProfile::class,
         UserMustHaveContact::class,
         UserMustHaveCompany::class,
     ])->group(function () {
