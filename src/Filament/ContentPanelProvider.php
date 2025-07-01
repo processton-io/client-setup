@@ -29,6 +29,7 @@ class ContentPanelProvider extends PanelProvider
             ->id('content')
             ->path('/app/content')
             ->brandName('CMS')
+            ->maxContentWidth('full')
             ->colors([
                 'primary' => Color::hex('#333333'),
             ])

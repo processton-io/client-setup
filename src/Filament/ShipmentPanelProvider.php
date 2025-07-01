@@ -29,6 +29,7 @@ class ShipmentPanelProvider extends PanelProvider
             ->id('shipment')
             ->path('/app/shipment')
             ->brandName('Shipment')
+            ->maxContentWidth('full')
             ->colors([
                 'primary' => Color::hex('#333333'),
             ])

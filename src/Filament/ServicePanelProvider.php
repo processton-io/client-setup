@@ -29,6 +29,7 @@ class ServicePanelProvider extends PanelProvider
             ->id('services')
             ->path('/app/services')
             ->brandName('Services')
+            ->maxContentWidth('full')
             ->colors([
                 'primary' => Color::hex('#333333'),
             ])

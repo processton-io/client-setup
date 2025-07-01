@@ -26,6 +26,7 @@ class InventoryPanelProvider extends PanelProvider
             ->id('inventory')
             ->path('/app/inventory')
             ->brandName('Invnentory')
+            ->maxContentWidth('full')
             ->topNavigation(true)
             ->colors([
                 'primary' => Color::hex('#333333'),

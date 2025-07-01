@@ -29,6 +29,7 @@ class PosPanelProvider extends PanelProvider
             ->id('pos')
             ->path('/app/pos')
             ->brandName('Pos')
+            ->maxContentWidth('full')
             ->colors([
                 'primary' => Color::hex('#333333'),
             ])

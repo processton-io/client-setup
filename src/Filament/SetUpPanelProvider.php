@@ -30,6 +30,7 @@ class SetUpPanelProvider extends PanelProvider
             ->id('setup')
             ->path('/app/setup')
             ->brandName('Setup')
+            ->maxContentWidth('full')
             ->colors([
                 'primary' => Color::hex('#333333'),
             ])
