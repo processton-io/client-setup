@@ -95,13 +95,15 @@ class Customer extends Model
     public function getProfilePictureAttribute()
     {
         $color = $this->color;
-        if($color){
+        if(!$color){
             $color = self::getRandomColor();
-            $this->color = $color;
+            $this->__set('color', $color);
             $this->save();
         }
+        //Remove starting hash
+        $color = ltrim($color, '#');
         // use image generator to get the image
-        return 'https://ui-avatars.com/api/?name=' . $this->name . '&background=475569&color=' . $color . '&size=128';
+        return 'https://ui-avatars.com/api/?name=' . $this->name . '&background=' . $color . '&color=475569&size=128';
     }
 
     public function addresses(){
