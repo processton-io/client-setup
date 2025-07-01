@@ -8,7 +8,7 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 place-items-center p-4">
                     @foreach ($panels as $panel)
                         @if(!in_array($panel->getId(),['profile']))
-                        <a href="/{{ $panel->getPath() }}" class="w-full hover:bg-gray-100 flex flex-col items-center justify-center text-center text-xs cursor-pointer rounded-lg py-6">
+                        <a href="{{ $panel->getPath() }}" class="w-full hover:bg-gray-100 flex flex-col items-center justify-center text-center text-xs cursor-pointer rounded-lg py-6">
                             <img
                                 alt="{{ $panel->getBrandName() }}"
                                 src="{{ $panel->getBrandLogo() }}"
