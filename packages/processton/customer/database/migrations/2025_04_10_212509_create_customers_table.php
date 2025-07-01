@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('identifier')->nullable();
             $table->boolean('is_personal')->default(false);
 
+            $table->string('color',7)->nullable();
+
             $table->boolean('enable_portal')->nullable();
             $table->foreignId('currency_id')->nullable()->constrained();
             $table->foreignId('creator_id')->nullable()->constrained('users');
