@@ -11,10 +11,11 @@ use Processton\CustomerDatabase\Factories\CustomerFactory;
 use Processton\Locale\Models\Address;
 use Processton\Locale\Models\Currency;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Processton\Locale\Traits\HasColor;
 
 class Customer extends Model
 {
-    use HasFactory, HasUuids;
+    use HasFactory, HasUuids, HasColor;
     protected $table = 'customers';
 
     /**
@@ -100,93 +101,16 @@ class Customer extends Model
             $this->__set('color', $color);
             $this->save();
         }
+        $textColor = self::getTextColor($color);
         //Remove starting hash
         $color = ltrim($color, '#');
+        $textColor = ltrim($textColor, '#');
         // use image generator to get the image
-        return 'https://ui-avatars.com/api/?name=' . $this->name . '&background=' . $color . '&color=475569&size=128';
+        return 'https://ui-avatars.com/api/?name=' . $this->name . '&background=' . $color . '&color=' . $textColor . '&size=128';
     }
 
     public function addresses(){
         return $this->morphMany(Address::class, 'entity', 'entity_type');
-    }
-
-    public static function getRandomColor(){
-        $colors = [
-            'color' => '#6B8E23',
-            'color' => '#00247D',
-            'color' => '#FFD700',
-            'color' => '#008000',
-            'color' => '#FF4500',
-            'color' => '#4682B4',
-            'color' => '#B22222',
-            'color' => '#FFD700',
-            'color' => '#8B0000',
-            'color' => '#1E90FF',
-            'color' => '#FF6347',
-            'color' => '#FF4500',
-            'color' => '#FF9933',
-            'color' => '#00008B',
-            'color' => '#00BFFF',
-            'color' => '#8A2BE2',
-            'color' => '#32CD32',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-            'color' => '#228B22',
-            'color' => '#FF8C00',
-            'color' => '#8B0000',
-            'color' => '#FF6347',
-            'color' => '#008000',
-            'color' => '#000000',
-            'color' => '#00A859',
-            'color' => '#007FFF',
-            'color' => '#FF0000',
-            'color' => '#FF4500',
-            'color' => '#008000',
-            'color' => '#FFD700',
-            'color' => '#FF6347',
-            'color' => '#008080',
-            'color' => '#FFA500',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-            'color' => '#008000',
-            'color' => '#FF4500',
-            'color' => '#FF6347',
-            'color' => '#4682B4',
-            'color' => '#FFD700',
-            'color' => '#8B0000',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#008000',
-            'color' => '#FF6347',
-            'color' => '#4682B4',
-            'color' => '#FFA500',
-            'color' => '#FF9933',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#4682B4',
-            'color' => '#FF6347',
-            'color' => '#1E90FF',
-            'color' => '#FF4500',
-            'color' => '#FF6347',
-            'color' => '#4682B4',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#4682B4',
-            'color' => '#FF6347',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#4682B4',
-            'color' => '#FF6347',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-        ];
-
-        return $colors[array_rand($colors)];
     }
 
 

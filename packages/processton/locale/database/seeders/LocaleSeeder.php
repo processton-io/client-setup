@@ -8,9 +8,11 @@ use Processton\Locale\Models\City;
 use Processton\Locale\Models\Country;
 use Processton\Locale\Models\Region;
 use Processton\Locale\Models\Zone;
+use Processton\Locale\Traits\HasColor;
 
 class LocaleSeeder extends Seeder
 {
+    use HasColor;
     /**
      * Seed the application's database.
      */
@@ -100,86 +102,6 @@ class LocaleSeeder extends Seeder
 
 
         $this->call(CurrenciesTableSeeder::class);
-    }
-
-
-    public static function getRandomColor(){
-        $colors = [
-            'color' => '#6B8E23',
-            'color' => '#00247D',
-            'color' => '#FFD700',
-            'color' => '#008000',
-            'color' => '#FF4500',
-            'color' => '#4682B4',
-            'color' => '#B22222',
-            'color' => '#FFD700',
-            'color' => '#8B0000',
-            'color' => '#1E90FF',
-            'color' => '#FF6347',
-            'color' => '#FF4500',
-            'color' => '#FF9933',
-            'color' => '#00008B',
-            'color' => '#00BFFF',
-            'color' => '#8A2BE2',
-            'color' => '#32CD32',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-            'color' => '#228B22',
-            'color' => '#FF8C00',
-            'color' => '#8B0000',
-            'color' => '#FF6347',
-            'color' => '#008000',
-            'color' => '#000000',
-            'color' => '#00A859',
-            'color' => '#007FFF',
-            'color' => '#FF0000',
-            'color' => '#FF4500',
-            'color' => '#008000',
-            'color' => '#FFD700',
-            'color' => '#FF6347',
-            'color' => '#008080',
-            'color' => '#FFA500',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-            'color' => '#008000',
-            'color' => '#FF4500',
-            'color' => '#FF6347',
-            'color' => '#4682B4',
-            'color' => '#FFD700',
-            'color' => '#8B0000',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#008000',
-            'color' => '#FF6347',
-            'color' => '#4682B4',
-            'color' => '#FFA500',
-            'color' => '#FF9933',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#4682B4',
-            'color' => '#FF6347',
-            'color' => '#1E90FF',
-            'color' => '#FF4500',
-            'color' => '#FF6347',
-            'color' => '#4682B4',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#4682B4',
-            'color' => '#FF6347',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#4682B4',
-            'color' => '#FF6347',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-            'color' => '#FF4500',
-            'color' => '#FFD700',
-        ];
-
-        return $colors[array_rand($colors)];
     }
 
 }
