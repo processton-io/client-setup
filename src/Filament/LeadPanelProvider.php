@@ -32,7 +32,6 @@ class LeadPanelProvider extends PanelProvider
             ->id('leads')
             ->path('/app/leads')
             ->brandName('Marketing Leads')
-            ->topNavigation(true)
             ->maxContentWidth('full')
             ->colors([
                 'primary' => Color::hex('#333333'),

@@ -31,7 +31,6 @@ class CrmPanelProvider extends PanelProvider
             ->id('crm')
             ->path('/app/crm')
             ->brandName('CRM')
-            ->topNavigation(true)
             ->colors([
                 'primary' => Color::hex('#333333'),
             ])

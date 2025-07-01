@@ -27,7 +27,6 @@ class AbacusPanelProvider extends PanelProvider
             ->id('abacus')
             ->path('/app/abacus')
             ->brandName('Abacus')
-            ->topNavigation(true)
             ->maxContentWidth('full')
             ->colors([
                 'primary' => Color::hex('#333333'),
