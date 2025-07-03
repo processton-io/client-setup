@@ -20,7 +20,7 @@ class BalanceSheet extends Page implements HasForms
 
     protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
 
-    protected static string $view = 'abacus.balance-sheet';
+    protected static string $view = 'abacus::balance-sheet';
     protected static ?string $title = 'Balance Sheet';
 
     protected static ?string $navigationGroup = 'Reporting';
@@ -216,7 +216,7 @@ class BalanceSheet extends Page implements HasForms
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('abacus.balance-sheet-pdf', $data);
+        $pdf->loadView('abacus::balance-sheet-pdf', $data);
         
         $filename = 'balance-sheet-' . now()->format('Y-m-d') . '.pdf';
         
@@ -263,11 +263,11 @@ class BalanceSheet extends Page implements HasForms
             'generatedAt' => now()->format('Y-m-d H:i:s'),
         ];
 
-        // return view('abacus.balance-sheet-pdf', $data);
+        // return view('abacus::balance-sheet-pdf', $data);
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('abacus.balance-sheet-pdf', $data)->setWarnings(true);
+        $pdf->loadView('abacus::balance-sheet-pdf', $data)->setWarnings(true);
         
         return response($pdf->output(), 200, [
             'Content-Type' => 'application/pdf',

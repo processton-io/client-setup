@@ -19,7 +19,7 @@ class GeneralLedger extends Page implements HasForms
     use InteractsWithForms;
 
     // protected static ?string $navigationIcon = 'heroicon-o-document-report';
-    protected static string $view = 'abacus.general-ledger';
+    protected static string $view = 'abacus::general-ledger';
     protected static ?string $title = 'General Ledger';
 
     protected static ?string $navigationGroup = 'Reporting';
@@ -184,7 +184,7 @@ class GeneralLedger extends Page implements HasForms
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('abacus.general-ledger-pdf', $data);
+        $pdf->loadView('abacus::general-ledger-pdf', $data);
         
         $filename = 'general-ledger-' . str_replace(' ', '-', strtolower($accountName)) . '-' . now()->format('Y-m-d') . '.pdf';
         
@@ -252,7 +252,7 @@ class GeneralLedger extends Page implements HasForms
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('abacus.general-ledger-pdf', $data);
+        $pdf->loadView('abacus::general-ledger-pdf', $data);
         return response($pdf->output(), 200, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="general-ledger-' . str_replace(' ', '-', strtolower($accountName)) . '-' . now()->format('Y-m-d') . '.pdf"',

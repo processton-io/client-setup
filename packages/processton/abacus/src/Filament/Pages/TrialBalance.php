@@ -19,7 +19,7 @@ class TrialBalance extends Page implements HasForms
     use InteractsWithForms;
 
     // protected static ?string $navigationIcon = 'heroicon-o-table';
-    protected static string $view = 'abacus.trial-balance';
+    protected static string $view = 'abacus::trial-balance';
     protected static ?string $title = 'Trial Balance';
 
     protected static ?string $navigationGroup = 'Reporting';
@@ -126,7 +126,7 @@ class TrialBalance extends Page implements HasForms
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('abacus.trial-balance-pdf', $data);
+        $pdf->loadView('abacus::trial-balance-pdf', $data);
         
         $filename = 'trial-balance-' . now()->format('Y-m-d') . '.pdf';
         
@@ -167,7 +167,7 @@ class TrialBalance extends Page implements HasForms
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('abacus.trial-balance-pdf', $data);
+        $pdf->loadView('abacus::trial-balance-pdf', $data);
         
         return response($pdf->output(), 200, [
             'Content-Type' => 'application/pdf',

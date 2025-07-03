@@ -18,7 +18,7 @@ class ProfitLossStatement extends Page implements HasForms
 {
     use InteractsWithForms;
 
-    protected static string $view = 'abacus.profit-loss-statement';
+    protected static string $view = 'abacus::profit-loss-statement';
     protected static ?string $title = 'Profit & Loss Statement';
 
 
@@ -160,7 +160,7 @@ class ProfitLossStatement extends Page implements HasForms
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('abacus.profit-loss-statement-pdf', $data);
+        $pdf->loadView('abacus::profit-loss-statement-pdf', $data);
         
         $filename = 'profit-loss-statement-' . now()->format('Y-m-d') . '.pdf';
         
@@ -198,7 +198,7 @@ class ProfitLossStatement extends Page implements HasForms
 
         $pdf = \App::make('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('abacus.profit-loss-statement-pdf', $data);
+        $pdf->loadView('abacus::profit-loss-statement-pdf', $data);
         
         return response($pdf->output(), 200, [
             'Content-Type' => 'application/pdf',
