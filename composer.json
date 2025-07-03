@@ -1,6 +1,6 @@
 {
   "name": "processton/setup",
-  "version": "0.0.56",
+  "version": "0.0.57",
   "license": "MIT",
   "minimum-stability": "dev",
   "prefer-stable": true,
