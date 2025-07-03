@@ -18,7 +18,7 @@ class BalanceSheet extends Page implements HasForms
 {
     use InteractsWithForms;
 
-    protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
+    // protected static ?string $navigationIcon = 'heroicon-o-chart-bar';
 
     protected static string $view = 'abacus::balance-sheet';
     protected static ?string $title = 'Balance Sheet';
