@@ -33,5 +33,7 @@ Route::middleware([
 
         Route::get('/balance-sheet', [BalanceSheet::class, 'streamPdf'])->name('balance-sheet.stream-pdf');
 
+        Route::get('/cash-flow-statement', [\Processton\Abacus\Filament\Pages\CashFlowStatement::class, 'streamPdf'])->name('cash-flow-statement.stream-pdf');
+
     });
 });
