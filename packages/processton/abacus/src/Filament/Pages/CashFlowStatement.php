@@ -65,7 +65,7 @@ class CashFlowStatement extends Page implements HasForms
                             ->action('downloadPdf')
                             ->color('success')
                             ->icon('heroicon-o-document-arrow-down')
-                            ->visible(fn () => $this->incomeRows->isNotEmpty() || $this->expenseRows->isNotEmpty()),
+                            ->visible(fn () => $this->operatingCashFlows->isNotEmpty() || $this->investingCashFlows->isNotEmpty() || $this->financingCashFlows->isNotEmpty()),
                     ])->columnSpanFull(),
                 ]
             )
@@ -77,7 +77,7 @@ class CashFlowStatement extends Page implements HasForms
 
         $cashAccountIds = AbacusChartOfAccount::whereIn('name', ['Cash in Hand', 'Bank Accounts'])->pluck('id');
 
-        $transactions = AbacusTransaction::with('incoming', 'chartOfAccount')
+        $transactions = AbacusTransaction::with('incoming', 'account')
             ->whereIn('abacus_chart_of_account_id', $cashAccountIds)
             ->where('abacus_year_id', $this->yearId)
             ->orderBy('date')
@@ -89,7 +89,7 @@ class CashFlowStatement extends Page implements HasForms
 
             if (!$pair) continue;
 
-            $account = $pair->chartOfAccount;
+            $account = $pair->account;
             $flowType = match ($account->base_type) {
                 'income', 'expense' => 'operating',
                 'asset' => 'investing',
@@ -125,6 +125,7 @@ class CashFlowStatement extends Page implements HasForms
             'financingTotal' => $this->financingTotal,
             'netChange' => $this->netChange,
             'selectedYear' => AbacusYear::find($this->yearId),
+            'generatedAt' => now()->format('Y-m-d H:i:s'),
         ];
 
         $pdf = \App::make('dompdf.wrapper');
@@ -148,7 +149,7 @@ class CashFlowStatement extends Page implements HasForms
         $this->mount();
 
         // Ensure rows are populated
-        if ($this->incomeRows->isEmpty() && $this->expenseRows->isEmpty()) {
+        if ($this->operatingCashFlows->isEmpty() && $this->investingCashFlows->isEmpty() && $this->financingCashFlows->isEmpty()) {
             $this->viewReport();
         }
         
@@ -161,6 +162,7 @@ class CashFlowStatement extends Page implements HasForms
             'financingTotal' => $this->financingTotal,
             'netChange' => $this->netChange,
             'selectedYear' => AbacusYear::find($this->yearId),
+            'generatedAt' => now()->format('Y-m-d H:i:s'),
         ];
 
         $pdf = \App::make('dompdf.wrapper');

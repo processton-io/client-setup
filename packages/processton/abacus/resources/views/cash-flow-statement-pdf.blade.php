@@ -124,32 +124,45 @@
     </div>
 
     <div class="report-info">
-        @if($year)
+        @if($selectedYear)
         <div class="info-row">
             <span class="info-label">Year:</span>
-            <span>{{ $year->start_date->format('Y') }} - {{ $year->end_date->format('Y') }}</span>
+            <span>{{ $selectedYear->start_date->format('Y') }} - {{ $selectedYear->end_date->format('Y') }}</span>
         </div>
         @endif
     </div>
-
-    @foreach (['Operating' => $operatingCashFlows, 'Investing' => $investingCashFlows, 'Financing' => $financingCashFlows] as $type => $flows)
-        <div class="section">
-            <h3>{{ $type }} Activities</h3>
-            @forelse ($flows as $flow)
-                <div class="row">
-                    <span>{{ $flow['description'] }}</span>
-                    <span>{{ number_format($flow['amount'], 2) }}</span>
-                </div>
-            @empty
-                <div class="row text-gray-500">No data</div>
-            @endforelse
-            <div class="row bold">
-                <span>Total {{ $type }}</span>
-                <span>{{ number_format(${"{$type}Total"}, 2) }}</span>
-            </div>
-        </div>
-    @endforeach
-
+    <table class="ledger-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Account</th>
+                <th style="width: 20%; text-align: right;">Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (['operating' => $operatingCashFlows, 'investing' => $investingCashFlows, 'financing' => $financingCashFlows] as $type => $flows)
+                
+                <tr>
+                    <td colspan="2">{{ ucfirst($type) }} Activities</td>
+                </tr>
+                @forelse ($flows as $flow)
+                    <tr>
+                        <td style="padding-left: 36px;">{{ $flow['description'] }}</td>
+                        <td style="width: 20%; text-align: right;">{{ number_format($flow['amount'], 2) }}</td>
+                    </tr>
+                @empty
+                    <tr class="row text-gray-500" colspan="2">No data</tr>
+                @endforelse
+                <tr>
+                    <td colspan="1" class="text-right">
+                        Total {{ $type }}
+                    </td>
+                    <td class="text-right">
+                        {{ number_format(${"{$type}Total"}, 2) }}
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
     
 
     <script type="text/php">

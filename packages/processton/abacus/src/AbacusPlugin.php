@@ -14,6 +14,7 @@ use Processton\Abacus\Filament\Resources\AbacusTransactionResource;
 use Processton\Abacus\Filament\Resources\AbacusYearResource;
 
 use Processton\Abacus\Filament\Pages\BalanceSheet;
+use Processton\Abacus\Filament\Pages\CashFlowStatement;
 use Processton\Abacus\Filament\Pages\GeneralLedger;
 use Processton\Abacus\Filament\Pages\ProfitLossStatement;
 use Processton\Abacus\Filament\Pages\TrialBalance;
@@ -47,6 +48,7 @@ class AbacusPlugin implements Plugin
             GeneralLedger::class,
             ProfitLossStatement::class,
             TrialBalance::class,
+            CashFlowStatement::class
         ]);
     }
 

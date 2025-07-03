@@ -11,8 +11,6 @@
                     <iframe 
                         src="{{ route('cash-flow-statement.stream-pdf', [
                             'yearId' => $yearId,
-                            'startDate' => $startDate,
-                            'endDate' => $endDate,
                         ]) }}" 
                         class="w-full h-full border-0" 
                         style="height: calc(100% - 60px);">
