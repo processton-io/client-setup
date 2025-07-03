@@ -76,7 +76,10 @@
       "Processton\\OrgDatabase\\Seeders\\": "./packages/processton/org/database/seeders/",
       "Processton\\UserProfile\\": "./packages/processton/user-profile/src/",
       "Processton\\UserProfile\\Factories\\": "./packages/processton/user-profile/database/factories/",
-      "Processton\\UserProfile\\Seeders\\": "./packages/processton/user-profile/database/seeders/"
+      "Processton\\UserProfile\\Seeders\\": "./packages/processton/user-profile/database/seeders/",
+      "Processton\\Abacus\\": "./packages/processton/abacus/src/",
+      "Processton\\Abacus\\Factories\\": "./packages/processton/abacus/database/factories/",
+      "Processton\\Abacus\\Seeders\\": "./packages/processton/abacus/database/seeders/"
     }
   },
   "extra": {
@@ -98,7 +101,8 @@
         "Processton\\Lead\\LeadServiceProvider",
         "Processton\\Locale\\LocaleServiceProvider",
         "Processton\\Org\\OrgServiceProvider",
-        "Processton\\UserProfile\\UserProfileServiceProvider"
+        "Processton\\UserProfile\\UserProfileServiceProvider",
+        "Processton\\Abacus\\AbacusServiceProvider"
       ]
     }
   }
