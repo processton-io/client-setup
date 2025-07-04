@@ -78,8 +78,8 @@
       "Processton\\UserProfile\\Factories\\": "./packages/processton/user-profile/database/factories/",
       "Processton\\UserProfile\\Seeders\\": "./packages/processton/user-profile/database/seeders/",
       "Processton\\Abacus\\": "./packages/processton/abacus/src/",
-      "Processton\\Abacus\\Factories\\": "./packages/processton/abacus/database/factories/",
-      "Processton\\Abacus\\Seeders\\": "./packages/processton/abacus/database/seeders/"
+      "Processton\\AbacusDatabase\\Factories\\": "./packages/processton/abacus/database/factories/",
+      "Processton\\AbacusDatabase\\Seeders\\": "./packages/processton/abacus/database/seeders/"
     }
   },
   "extra": {

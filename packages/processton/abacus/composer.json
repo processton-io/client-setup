@@ -9,8 +9,8 @@
     "autoload": {
         "psr-4": {
             "Processton\\Abacus\\": "src/",
-            "Processton\\Abacus\\Factories\\": "database/factories/",
-            "Processton\\Abacus\\Seeders\\": "database/seeders/"
+            "Processton\\AbacusDatabase\\Factories\\": "database/factories/",
+            "Processton\\AbacusDatabase\\Seeders\\": "database/seeders/"
         }
     },
     "extra": {
