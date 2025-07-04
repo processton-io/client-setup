@@ -1,5 +1,5 @@
 <?php
-namespace Processton\Abacus\Database\Seeders;
+namespace Processton\AbacusDatabase\Seeders;
 
 use Processton\Abacus\Models\AbacusChartOfAccount;
 use Illuminate\Database\Seeder;

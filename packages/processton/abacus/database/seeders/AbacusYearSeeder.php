@@ -1,6 +1,6 @@
 <?php
 
-namespace Processton\Abacus\Database\Seeders;
+namespace Processton\AbacusDatabase\Seeders;
 
 use Processton\Abacus\Models\AbacusYear;
 use Carbon\Carbon;
@@ -94,6 +94,6 @@ class AbacusYearSeeder extends Seeder
     }
 
     public function getAccount($name) {
-        return \App\Models\AbacusChartOfAccount::where('name', $name)->firstOrFail()->id;
+        return \Processton\Abacus\Models\AbacusChartOfAccount::where('name', $name)->firstOrFail()->id;
     }
 }
